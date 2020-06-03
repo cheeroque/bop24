@@ -13,16 +13,21 @@ $gray-800: #424242;
 $gray-900: #212121;
 $black: #000;
 
-$primary: #0174b4;
-$secondary: #30485d;
-$light: $gray-200;
-$dark: #1b2a38;
-
 $red: #dd0000;
-$orange: #ee7700;
-$yellow: #ffee00;
-$green: #00bb00;
-$blue: #3ab8e0;
+$magenta: #d41894;
+$pink: #e03e7e;
+$yellow: #ffe177;
+$teal: #18d4c9;
+$green: #3c7751;
+$blue: #46aae1;
+$darkblue: #0173b4;
+$cyan: #04beca;
+$orange: #f6a429;
+
+$primary: $cyan;
+$secondary: $darkblue;
+$light: $gray-200;
+$dark: $gray-800;
 
 $danger: $red;
 $warning: $orange;
@@ -58,7 +63,7 @@ $enable-validation-icons: false;
 $enable-rounded: true;
 $transition-base: all 0.2s ease-out;
 $body-bg: $white;
-$body-color: $gray-800;
+$body-color: $gray-900;
 
 // Spacing
 
@@ -79,30 +84,26 @@ $spacers: (
 
 // Fonts
 
-$font-family-sans-serif: 'Roboto', sans-serif;
+$font-family-sans-serif: 'Inter', sans-serif;
 $font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 $font-size-base: 0.875rem;
 $font-weight-normal: 400;
 $font-weight-medium: 500;
 $font-weight-bold: 700;
 $line-height-base: 1.2;
-$lead-font-size: ($font-size-base * 1.125);
-$lead-font-weight: $font-weight-normal;
 
-$headings-font-weight: $font-weight-bold;
-
-$font-size-0: $font-size-base * 0.625;
-$font-size-1: $font-size-base * 0.75;
-$font-size-2: $font-size-base * 0.875;
-$font-size-3: $font-size-base;
-$font-size-4: $font-size-base * 1.125;
-$font-size-5: $font-size-base * 1.25;
-$font-size-6: $font-size-base * 1.375;
+$font-size-0: 0.625rem;
+$font-size-1: 0.75rem;
+$font-size-2: 0.875rem;
+$font-size-3: 1rem;
+$font-size-4: 1.125rem;
+$font-size-5: 1.25rem;
+$font-size-6: 1.375rem;
 
 // Buttons + Forms
 
 $input-btn-padding-y: 0.5rem;
-$input-btn-padding-x: 1rem;
+$input-btn-padding-x: 1rem; 
 $input-btn-line-height: 1.5;
 
 $btn-padding-x: 1.5rem;

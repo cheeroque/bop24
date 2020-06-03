@@ -1,0 +1,39 @@
+.btn {
+  &[type='submit'] {
+    min-width: 10rem;
+  }
+}
+
+// SVG fills
+
+@each $color, $value in $theme-colors {
+  .btn-#{$color} {
+    .icon {
+      fill: color-yiq($value);
+    }
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .btn-outline-#{$color} {
+    .icon {
+      fill: $value;
+    }
+
+    &:hover,
+    &:active,
+    &.active {
+      .icon {
+        fill: color-yiq($value);
+      }
+    }
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .show > .btn-outline-#{$color} {
+    .icon {
+      fill: color-yiq($value);
+    }
+  }
+}

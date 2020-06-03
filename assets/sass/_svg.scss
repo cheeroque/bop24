@@ -1,0 +1,17 @@
+@each $color, $value in $theme-colors {
+  .fill-#{$color},
+  .fill-#{$color} svg,
+  .fill-#{$color} svg path,
+  svg.fill-#{$color},
+  svg.fill-#{$color} path {
+    fill: $value !important;
+  }
+
+  .stroke-#{$color},
+  .stroke-#{$color} svg,
+  .stroke-#{$color} svg path,
+  svg.stroke-#{$color},
+  svg.stroke-#{$color} path {
+    stroke: $value !important;
+  }
+}

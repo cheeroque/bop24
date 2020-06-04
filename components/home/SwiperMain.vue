@@ -1,14 +1,22 @@
 <template>
   <div class="swiper swiper-main">
     <swiper ref="swiperMain" :options="swiperOptions">
-      <swiper-slide v-for="i in 10" :key="i">
-        <div class="text-center">
-          {{ i }}
+      <swiper-slide v-for="(slide, index) in items" :key="`slide-${index}`">
+        <div :style="slide.style" class="slide-wrapper">
+          <b-container class="slide-wrapper-container">
+            <img :src="slide.img" class="slide-img" />
+            <div class="slide-content">
+              <div v-html="slide.text" class="slide-text"></div>
+              <b-button :href="slide.link" variant="white" class="slide-link">
+                Подробнее
+              </b-button>
+            </div>
+          </b-container>
         </div>
       </swiper-slide>
       <div slot="pagination" class="swiper-pagination"></div>
-      <div slot="button-prev" class="swiper-button-prev"></div>
-      <div slot="button-next" class="swiper-button-next"></div>
+      <div slot="button-prev" class="swiper-nav swiper-button-prev"></div>
+      <div slot="button-next" class="swiper-nav swiper-button-next"></div>
     </swiper>
   </div>
 </template>
@@ -21,6 +29,12 @@ export default {
   components: {
     Swiper,
     SwiperSlide
+  },
+  props: {
+    items: {
+      type: Array,
+      required: true
+    }
   },
   data() {
     return {

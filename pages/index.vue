@@ -41,6 +41,33 @@
         title="Продукты долгого хранения"
         class="mb-5"
       ></swiper-products>
+
+      <div class="mb-5">
+        <p class="section-title">
+          Велосипеды
+        </p>
+
+        <a href="#" class="card card-banner card-banner-lg">
+          <img src="/images/cards/bike.jpg" class="card-img" />
+          <div class="card-body card-img-overlay text-white">
+            <div class="h-100 d-flex flex-column">
+              <b-row no-gutters>
+                <b-col cols="8">
+                  <p class="h3 mb-1">
+                    #наспорте
+                  </p>
+                  <p>
+                    Инвентарь для&nbsp;активных выходных
+                  </p>
+                </b-col>
+              </b-row>
+              <b-button variant="white" class="mt-auto mr-auto">
+                Подробнее
+              </b-button>
+            </div>
+          </div>
+        </a>
+      </div>
     </b-container>
   </main>
 </template>

@@ -4,6 +4,31 @@
     border: none;
     font-weight: $font-weight-medium;
 
+    h1,
+    .h1 {
+      font-size: 1.25rem;
+    }
+    h2,
+    .h2 {
+      font-size: 1.125rem;
+    }
+    h3,
+    .h3 {
+      font-size: 1rem;
+    }
+    h4,
+    .h4,
+    h5,
+    .h5,
+    h6,
+    .h6 {
+      font-size: $font-size-base;
+    }
+
+    .btn {
+      font-weight: $font-weight-medium;
+    }
+
     .card-img {
       object-fit: cover;
       border-radius: 0;
@@ -15,10 +40,88 @@
       }
     }
 
+    &.card-banner-lg {
+      .card-img {
+        height: 165px;
+      }
+    }
+
+    @include media-breakpoint-down(sm) {
+      .btn {
+        padding: 0.25rem 1.25rem;
+      }
+    }
+
     @include media-breakpoint-up(md) {
+      h1,
+      .h1 {
+        font-size: 2.5rem;
+      }
+      h2,
+      .h2 {
+        font-size: 2rem;
+      }
+      h3,
+      .h3 {
+        font-size: 1.25rem;
+      }
+
       &.card-banner-sm {
         .card-img {
           height: 210px;
+        }
+      }
+
+      &.card-banner-lg {
+        font-size: 1.125rem;
+
+        .card-img {
+          height: 250px;
+        }
+
+        .card-body {
+          padding-top: 2rem;
+        }
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      h1,
+      .h1 {
+        font-size: 4rem;
+      }
+      h2,
+      .h2 {
+        font-size: 3rem;
+      }
+      h3,
+      .h3 {
+        font-size: 2rem;
+      }
+      h4,
+      .h4 {
+        font-size: 1.75rem;
+      }
+
+      &.card-banner-lg {
+        .card-img {
+          height: 320px;
+        }
+
+        .card-body {
+          padding: 3rem 2rem 2rem;
+        }
+      }
+    }
+
+    @include media-breakpoint-up(xl) {
+      &.card-banner-lg {
+        .card-img {
+          height: 370px;
+        }
+
+        .card-body {
+          padding: 4rem 3rem 3rem;
         }
       }
     }

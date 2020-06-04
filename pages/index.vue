@@ -2,6 +2,40 @@
   <main>
     <header-tags></header-tags>
     <swiper-main :items="swiperItems"></swiper-main>
+    <b-container>
+      <b-row class="mb-3 mb-lg-4">
+        <b-col md="4" class="mb-3">
+          <a href="#" class="card card-banner card-banner-sm">
+            <img src="/images/cards/veggies.jpg" class="card-img" />
+            <div class="card-body card-img-overlay">
+              <span class="text-white">
+                #вегетарианство
+              </span>
+            </div>
+          </a>
+        </b-col>
+        <b-col md="4" class="mb-3">
+          <a href="#" class="card card-banner card-banner-sm">
+            <img src="/images/cards/gardening.jpg" class="card-img" />
+            <div class="card-body card-img-overlay">
+              <span class="text-white">
+                #всевсад
+              </span>
+            </div>
+          </a>
+        </b-col>
+        <b-col md="4" class="mb-3">
+          <a href="#" class="card card-banner card-banner-sm">
+            <img src="/images/cards/sports.jpg" class="card-img" />
+            <div class="card-body card-img-overlay">
+              <span class="text-white">
+                #спорт
+              </span>
+            </div>
+          </a>
+        </b-col>
+      </b-row>
+    </b-container>
   </main>
 </template>
 

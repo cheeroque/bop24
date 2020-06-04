@@ -1,0 +1,26 @@
+.card {
+  &.card-banner {
+    border-radius: 0;
+    border: none;
+    font-weight: $font-weight-medium;
+
+    .card-img {
+      object-fit: cover;
+      border-radius: 0;
+    }
+
+    &.card-banner-sm {
+      .card-img {
+        height: 155px;
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      &.card-banner-sm {
+        .card-img {
+          height: 210px;
+        }
+      }
+    }
+  }
+}

@@ -30,13 +30,18 @@
 @import 'swiper';
 
 @include media-breakpoint-down(sm) {
+  .container {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+
   .row {
-    margin-left: -0.5rem;
-    margin-right: -0.5rem;
+    margin-left: -0.5rem !important;
+    margin-right: -0.5rem !important;
 
     & > [class*='col'] {
-      padding-left: 0.5rem;
-      padding-right: 0.5rem;
+      padding-left: 0.5rem !important;
+      padding-right: 0.5rem !important;
     }
   }
 }
@@ -57,7 +62,7 @@
 @import "~bootstrap/scss/custom-forms";
 @import '~bootstrap/scss/nav';
 @import '~bootstrap/scss/navbar';
-//@import "~bootstrap/scss/card";
+@import "~bootstrap/scss/card";
 //@import "~bootstrap/scss/breadcrumb";
 //@import "~bootstrap/scss/pagination";
 //@import "~bootstrap/scss/badge";
@@ -78,4 +83,5 @@
 @import 'bootstrap-vue/src/index.scss';
 
 @import 'button';
+@import 'card';
 /* @import 'utilities'; */

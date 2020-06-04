@@ -57,6 +57,7 @@ export default {
       'FormCheckboxPlugin',
       'FormTextareaPlugin',
       'DropdownPlugin',
+      'CardPlugin',
       'SpinnerPlugin',
       'ToastPlugin'
     ]

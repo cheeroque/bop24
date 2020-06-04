@@ -1,4 +1,10 @@
 .swiper {
+  .swiper-container {
+    &:not(.swiper-container-initialized) {
+      display: none;
+    }
+  }
+
   .swiper-nav {
     display: block;
     width: 2rem;

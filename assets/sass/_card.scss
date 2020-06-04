@@ -23,4 +23,133 @@
       }
     }
   }
+
+  &.card-product {
+    height: 100%;
+    border-radius: $border-radius-sm;
+
+    .card-img-wrapper {
+      padding: 0.5rem
+    }
+
+    .card-img {
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+      margin: auto;
+    }
+
+    .card-rating {
+      display: flex;
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+
+      .icon-rating {
+        stroke: $orange;
+        fill: transparent;
+
+        &.icon-rating-full {
+          fill: $orange;
+        }
+
+        & + .icon-rating {
+          margin-left: 0.25rem;
+        }
+      }
+    }
+
+    .card-body {
+      padding: 0.5rem 0.75rem;
+    }
+
+    .item-price {
+      margin-bottom: 0.5rem;
+      
+      .caption {
+        margin-bottom: 0.25rem;
+        font-size: 0.625rem;
+        color: $gray-600;
+      }
+
+      .price {
+        margin-bottom: 0;
+        font-weight: $font-weight-medium;
+        color: $secondary;
+      }
+    }
+
+    .card-footer {
+      display: flex;
+      padding: 0.5rem;
+      border: none;
+      background-color: transparent;
+
+      .b-form-spinbutton {
+        height: auto;
+        padding: 0.375rem 0.5rem;
+        border-radius: $border-radius-sm;
+        color: $white;
+        border-color: $primary;
+        background-color: $primary;
+
+        .btn {
+          padding-left: 0.75rem;
+          padding-right: 0.75rem;
+
+          .b-icon {
+            fill: $white;
+          }
+        }
+
+        & > output {
+          border: none !important;
+        }
+      }
+
+      .btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.375rem 1.5rem;
+        border-radius: $border-radius-sm;
+
+        .icon {
+          flex: 0 0 auto;
+        }
+
+        .caption {
+          margin-left: 0.75rem;
+        }
+
+        &.btn-icon {
+          .icon {
+            fill: none;
+            stroke: $gray-500;
+            transition: $transition-base;
+          }
+
+          &:not(:disabled):not(.disabled) {
+            &:hover {
+              .icon {
+                stroke: $secondary;
+              }
+            }
+
+            &:focus {
+              box-shadow: none;
+            }
+
+            &.active {
+              .icon {
+                fill: $magenta;
+                stroke: $magenta;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

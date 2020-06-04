@@ -1,0 +1,91 @@
+<template>
+  <div class="card card-product">
+    <div class="card-img-wrapper">
+      <div class="embed-responsive embed-responsive-4by3">
+        <div class="embed-responsive-item d-flex">
+          <img :src="item.img" class="card-img" />
+          <div class="card-rating">
+            <svg-icon
+              v-for="i in item.rating"
+              :key="`star-${i}-full`"
+              name="rating"
+              width="11"
+              height="11"
+              class="icon-rating icon-rating-full"
+            />
+            <svg-icon
+              v-for="i in 5 - item.rating"
+              :key="`star-${i}`"
+              name="rating"
+              width="11"
+              height="11"
+              class="icon-rating"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p class="item-title">
+        {{ item.title }}
+      </p>
+      <div class="item-price">
+        <p class="caption">
+          Цена за&nbsp;1&nbsp;уп.
+        </p>
+        <p class="price">{{ item.price }}&nbsp;р.</p>
+      </div>
+    </div>
+    <div class="card-footer swiper-no-swiping">
+      <transition name="fade" mode="out-in">
+        <div v-if="!inCart" key="button" class="flex-fill">
+          <b-button @click="addToCart" variant="primary" block>
+            <svg-icon name="cart" width="22" height="20" />
+            <span class="caption">
+              В&nbsp;корзину
+            </span>
+          </b-button>
+        </div>
+        <div v-else key="spinbutton" class="flex-fill">
+          <b-form-spinbutton @change="setCount" v-model="count" min="0">
+          </b-form-spinbutton>
+        </div>
+      </transition>
+      <b-button
+        @click="inFav = !inFav"
+        :class="{ active: inFav }"
+        variant="link"
+        class="btn-icon ml-2"
+      >
+        <svg-icon name="heart-fill" width="22" height="20" />
+      </b-button>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    item: {
+      type: Object,
+      required: true
+    }
+  },
+  data() {
+    return {
+      inCart: false,
+      inFav: false,
+      count: 1
+    }
+  },
+  methods: {
+    addToCart() {
+      if (this.count < 1) this.count = 1
+      this.inCart = true
+    },
+    setCount() {
+      if (this.count < 1) this.inCart = false
+    }
+  }
+}
+</script>

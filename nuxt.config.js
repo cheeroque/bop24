@@ -48,6 +48,7 @@ export default {
     bootstrapVueCSS: false,
     componentPlugins: [
       'LayoutPlugin',
+      'NavbarPlugin',
       'LinkPlugin',
       'ButtonPlugin',
       'FormPlugin',
@@ -55,6 +56,7 @@ export default {
       'FormInputPlugin',
       'FormCheckboxPlugin',
       'FormTextareaPlugin',
+      'DropdownPlugin',
       'SpinnerPlugin',
       'ToastPlugin'
     ]

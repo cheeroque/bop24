@@ -452,4 +452,8 @@
       background-color: darken($secondary, 8%);
     }
   }
+
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
 }

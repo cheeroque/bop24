@@ -73,6 +73,12 @@ export default {
     /*
      ** You can extend webpack config here
      */
+    extractCSS: true,
+    filenames: {
+      app: '[name].js',
+      chunk: '[name].js',
+      css: '[name].css'
+    },
     extend(config, ctx) {}
   }
 }

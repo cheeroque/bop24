@@ -1,4 +1,20 @@
 .card {
+  .card-rating {
+    display: flex;
+
+    .icon-rating {
+      fill: $light;
+
+      &.icon-rating-full {
+        fill: $orange;
+      }
+
+      & + .icon-rating {
+        margin-left: 0.25rem;
+      }
+    }
+  }
+
   &.card-banner {
     border-radius: 0;
     border: none;
@@ -173,23 +189,9 @@
     }
 
     .card-rating {
-      display: flex;
       position: absolute;
       top: 0.5rem;
       right: 0.5rem;
-
-      .icon-rating {
-        stroke: $orange;
-        fill: transparent;
-
-        &.icon-rating-full {
-          fill: $orange;
-        }
-
-        & + .icon-rating {
-          margin-left: 0.25rem;
-        }
-      }
     }
 
     .card-body {
@@ -282,6 +284,30 @@
           }
         }
       }
+    }
+  }
+
+  &.card-review {
+    flex-direction: row;
+    align-items: center;
+    border-radius: 0;
+    border: none;
+
+    .card-img {
+      align-self: flex-start;
+      width: 4rem;
+      height: 4rem;
+      margin-top: 0.25rem;
+      border-radius: 99rem;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 0 1rem;
+    }
+
+    .card-rating {
+      margin-bottom: 0.5rem;
     }
   }
 }

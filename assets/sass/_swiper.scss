@@ -31,14 +31,14 @@
     }
   }
 
-  .swiper-pagination {
-    bottom: 2.25rem;
+    .swiper-pagination {
+      position: static;
+      margin-top: 0.75rem;
 
-    .swiper-pagination-bullet {
-      margin: 0 0.125rem;
-      background-color: $white;
+      .swiper-pagination-bullet {
+        background-color: $gray-400;
+      }
     }
-  }
 
   &.swiper-main {
     margin-bottom: 1rem;
@@ -136,6 +136,17 @@
       }
     }
 
+    .swiper-pagination {
+      position: absolute;
+      bottom: 2.25rem;
+      margin-top: 0;
+
+      .swiper-pagination-bullet {
+        margin: 0 0.125rem;
+        background-color: $white;
+      }
+    }
+
     @include media-breakpoint-down(sm) {
       .swiper-nav {
         display: none;
@@ -227,17 +238,18 @@
     }
   }
 
-  &.swiper-products {
+  &.swiper-products,
+  &.swiper-reviews {
     .swiper-header {
       margin-bottom: 1.5rem;
     }
 
     .swiper-nav {
-      width: 2.5rem;
-      height: 2.5rem;
+      width: 2.25rem;
+      height: 2.25rem;
 
       &::after {
-        font-size: 1.5rem;
+        font-size: 1.125rem;
       }
 
       &.swiper-button-prev {

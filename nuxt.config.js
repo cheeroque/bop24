@@ -70,15 +70,32 @@ export default {
   },
 
   build: {
-    /*
-     ** You can extend webpack config here
-     */
     extractCSS: true,
     filenames: {
       app: '[name].js',
       chunk: '[name].js',
       css: '[name].css'
     },
+    html: {
+      minify: {
+        collapseBooleanAttributes: true,
+        decodeEntities: true,
+        minifyCSS: false,
+        minifyJS: false,
+        processConditionalComments: true,
+        removeEmptyAttributes: true,
+        removeRedundantAttributes: true,
+        trimCustomFragments: true,
+        useShortDoctype: true
+      }
+    },
+    optimization: {
+      minimize: false
+    },
+
+    /*
+     ** You can extend webpack config here
+     */
     extend(config, ctx) {}
   }
 }

@@ -60,6 +60,7 @@ export default {
       swiperOptions: {
         loop: true,
         grabCursor: true,
+        preloadImages: false,
         lazy: true,
         pagination: {
           el: '.swiper-main-pagination',

@@ -39,7 +39,7 @@
     <div class="card-footer swiper-no-swiping">
       <transition name="fade" mode="out-in">
         <div v-if="!inCart" key="button" class="flex-fill">
-          <b-button @click="addToCart" variant="primary" block>
+          <b-button variant="primary" block @click="addToCart">
             <svg-icon name="cart" width="22" height="20" />
             <span class="caption">
               В&nbsp;корзину
@@ -47,15 +47,15 @@
           </b-button>
         </div>
         <div v-else key="spinbutton" class="flex-fill">
-          <b-form-spinbutton @change="setCount" v-model="count" min="0">
+          <b-form-spinbutton v-model="count" min="0" @change="setCount">
           </b-form-spinbutton>
         </div>
       </transition>
       <b-button
-        @click="inFav = !inFav"
         :class="{ active: inFav }"
         variant="link"
         class="btn-icon ml-2"
+        @click="inFav = !inFav"
       >
         <svg-icon name="heart-fill" width="22" height="20" />
       </b-button>

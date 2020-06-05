@@ -37,6 +37,7 @@
       </b-row>
 
       <swiper-products
+        id="swiperProducts1"
         :items="products"
         title="Продукты долгого хранения"
         class="mb-5"
@@ -129,6 +130,7 @@
       </div>
 
       <swiper-products
+        id="swiperProducts2"
         :items="products"
         title="Чистый дом: Станьте экспертом по чистоте"
         class="mb-5"
@@ -193,6 +195,12 @@
           </b-col>
         </b-row>
       </div>
+
+      <swiper-reviews
+        :items="reviews"
+        title="Отзывы"
+        class="mb-5"
+      ></swiper-reviews>
     </b-container>
   </main>
 </template>
@@ -201,12 +209,14 @@
 import HeaderTags from '@/components/header/HeaderTags'
 import SwiperMain from '@/components/home/SwiperMain'
 import SwiperProducts from '@/components/home/SwiperProducts'
+import SwiperReviews from '@/components/home/SwiperReviews'
 
 export default {
   components: {
     HeaderTags,
     SwiperMain,
-    SwiperProducts
+    SwiperProducts,
+    SwiperReviews
   },
   data() {
     return {
@@ -276,6 +286,32 @@ export default {
           price: '162,50',
           rating: 5,
           img: '/images/products/pasta.jpg'
+        }
+      ],
+      reviews: [
+        {
+          author: 'Елена Фахеева',
+          rating: 5,
+          img: '/images/users/user.jpg',
+          content: 'Прекрасный магазин. Все быстро привезли.'
+        },
+        {
+          author: 'Елена Фахеева',
+          rating: 5,
+          img: '/images/users/user.jpg',
+          content: 'Прекрасный магазин. Все быстро привезли.'
+        },
+        {
+          author: 'Елена Фахеева',
+          rating: 5,
+          img: '/images/users/user.jpg',
+          content: 'Прекрасный магазин. Все быстро привезли.'
+        },
+        {
+          author: 'Елена Фахеева',
+          rating: 4,
+          img: '/images/users/user.jpg',
+          content: 'Прекрасный магазин. Все быстро привезли.'
         }
       ]
     }

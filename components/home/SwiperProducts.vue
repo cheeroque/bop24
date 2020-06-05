@@ -19,6 +19,10 @@
           <swiper-slide v-for="(slide, index) in items" :key="`slide-${index}`">
             <card-product :item="slide"></card-product>
           </swiper-slide>
+          <div
+            slot="pagination"
+            :class="`swiper-pagination ${id}-pagination`"
+          ></div>
         </swiper>
         <div class="d-md-none">
           <div class="swiper-nav swiper-button-prev" @click="swiperPrev"></div>
@@ -41,6 +45,10 @@ export default {
     CardProduct
   },
   props: {
+    id: {
+      type: String,
+      required: true
+    },
     items: {
       type: Array,
       required: true
@@ -55,6 +63,9 @@ export default {
       swiperOptions: {
         loop: true,
         grabCursor: true,
+        pagination: {
+          el: `.${this.id}-pagination`
+        },
         breakpoints: {
           768: {
             slidesPerView: 2,

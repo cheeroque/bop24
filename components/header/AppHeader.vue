@@ -92,11 +92,17 @@
         </nav>
       </div>
     </header>
+    <header-tags></header-tags>
   </div>
 </template>
 
 <script>
+import HeaderTags from '@/components/header/HeaderTags'
+
 export default {
+  components: {
+    HeaderTags
+  },
   data() {
     return {
       catalog: [

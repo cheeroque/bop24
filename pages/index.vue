@@ -1,6 +1,5 @@
 <template>
   <main>
-    <header-tags></header-tags>
     <swiper-main :items="swiperItems"></swiper-main>
     <b-container>
       <b-row class="mb-3 mb-lg-5">
@@ -206,14 +205,12 @@
 </template>
 
 <script>
-import HeaderTags from '@/components/header/HeaderTags'
 import SwiperMain from '@/components/home/SwiperMain'
 import SwiperProducts from '@/components/home/SwiperProducts'
 import SwiperReviews from '@/components/home/SwiperReviews'
 
 export default {
   components: {
-    HeaderTags,
     SwiperMain,
     SwiperProducts,
     SwiperReviews

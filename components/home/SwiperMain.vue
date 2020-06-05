@@ -4,7 +4,14 @@
       <swiper-slide v-for="(slide, index) in items" :key="`slide-${index}`">
         <div :style="slide.style" class="slide-wrapper">
           <b-container class="slide-wrapper-container">
-            <img :src="slide.img" class="slide-img" />
+            <img
+              :data-srcset="
+                `/images/slides/${slide.img}-sm.jpg 767w, /images/slides/${slide.img}-md.jpg 991w, /images/slides/${slide.img}.jpg`
+              "
+              :data-src="`/images/slides/${slide.img}.jpg`"
+              class="slide-img swiper-lazy"
+            />
+            <!-- <img :src="slide.img" class="slide-img" /> -->
             <div class="slide-content">
               <!-- eslint-disable-next-line vue/no-v-html -->
               <div class="slide-text" v-html="slide.text"></div>
@@ -53,6 +60,7 @@ export default {
       swiperOptions: {
         loop: true,
         grabCursor: true,
+        lazy: true,
         pagination: {
           el: '.swiper-main-pagination',
           type: 'bullets'

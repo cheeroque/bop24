@@ -48,10 +48,11 @@ export default {
     bootstrapVueCSS: false,
     componentPlugins: [
       'LayoutPlugin',
-      'NavbarPlugin',
+      'ImagePlugin',
       'LinkPlugin',
       'ButtonPlugin',
       'ButtonGroupPlugin',
+      'NavbarPlugin',
       'FormPlugin',
       'FormGroupPlugin',
       'FormInputPlugin',

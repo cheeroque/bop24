@@ -4,6 +4,7 @@
       <b-button
         v-for="(tag, index) in tags"
         :key="`tag-${index}`"
+        href="#"
         variant="outline-gray-700"
       >
         #{{ tag }}

@@ -1,0 +1,22 @@
+.modal-content {
+  border-radius: 0 0 1rem 1rem;
+}
+
+.modal-header {
+  font-size: $font-size-4;
+  font-weight: $font-weight-medium;
+  text-align: center;
+}
+
+@include media-breakpoint-up(lg) {
+  .modal-header,
+  .modal-body,
+  .modal-footer {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .modal-body {
+    padding-bottom: 2rem;
+  }
+}

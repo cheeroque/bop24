@@ -230,5 +230,16 @@
         </b-row>
       </b-container>
     </div>
+    <modal-feedback></modal-feedback>
   </footer>
 </template>
+
+<script>
+import ModalFeedback from '@/components/modals/ModalFeedback'
+
+export default {
+  components: {
+    ModalFeedback
+  }
+}
+</script>

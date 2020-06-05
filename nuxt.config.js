@@ -55,6 +55,7 @@ export default {
       'FormPlugin',
       'FormGroupPlugin',
       'FormInputPlugin',
+      'FormRadioPlugin',
       'FormCheckboxPlugin',
       'FormTextareaPlugin',
       'FormSpinbuttonPlugin',

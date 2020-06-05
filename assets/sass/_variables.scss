@@ -71,6 +71,10 @@ $transition-base: all 0.2s ease-out;
 $body-bg: $white;
 $body-color: $gray-900;
 
+$border-radius: 0.3125rem;
+$border-radius-sm: 0.125rem;
+$border-radius-lg: 0.75rem;
+
 // Spacing
 
 $spacer: 1rem;
@@ -139,6 +143,7 @@ $custom-file-text: (
   ru: 'Выбрать файл'
 );
 
-$border-radius: 0.3125rem;
-$border-radius-sm: 0.125rem;
-$border-radius-lg: 0.75rem;
+// Modal
+
+$modal-content-border-width: 0;
+$modal-header-padding-y: 0.75rem;

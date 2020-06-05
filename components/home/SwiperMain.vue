@@ -15,7 +15,10 @@
           </b-container>
         </div>
       </swiper-slide>
-      <div slot="pagination" class="swiper-pagination"></div>
+      <div
+        slot="pagination"
+        class="swiper-pagination swiper-main-pagination"
+      ></div>
       <div
         slot="button-prev"
         class="swiper-nav swiper-button-prev"
@@ -51,7 +54,7 @@ export default {
         loop: true,
         grabCursor: true,
         pagination: {
-          el: '.swiper-pagination',
+          el: '.swiper-main-pagination',
           type: 'bullets'
         }
       }

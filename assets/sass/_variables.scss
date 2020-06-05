@@ -57,6 +57,12 @@ $yiq-text-dark: $gray-900;
 $yiq-text-light: $white;
 $yiq-contrasted-threshold: 150;
 
+// Gradients
+
+$gradient-blue: linear-gradient(92deg, darken($darkblue, 5%), $darkblue 10%, $teal 90%);
+$gradient-green: linear-gradient(92deg, $blue 10%, $green 90%);
+$gradient-pink: linear-gradient(92deg, $pink 10%, $yellow 90%);
+
 // Options
 
 $enable-validation-icons: false;
@@ -85,7 +91,8 @@ $spacers: (
 // Fonts
 
 $font-family-sans-serif: 'Roboto', sans-serif;
-$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+  'Liberation Mono', 'Courier New', monospace;
 $font-size-base: 0.875rem;
 $font-weight-normal: 400;
 $font-weight-medium: 500;
@@ -103,7 +110,7 @@ $font-size-6: 1.375rem;
 // Buttons + Forms
 
 $input-btn-padding-y: 0.5rem;
-$input-btn-padding-x: 1rem; 
+$input-btn-padding-x: 1rem;
 $input-btn-line-height: 1.5;
 
 $btn-padding-x: 1.5rem;
@@ -116,8 +123,8 @@ $custom-checkbox-indicator-border-radius: 0.125rem !important;
 
 // Buttons
 
-$btn-transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out,
-  box-shadow 0.2s ease-out;
+$btn-transition: color 0.2s ease-out, background-color 0.2s ease-out,
+  border-color 0.2s ease-out, box-shadow 0.2s ease-out;
 
 // Forms
 
@@ -125,7 +132,8 @@ $input-placeholder-color: $gray-500;
 $input-border-color: $gray-400;
 $input-focus-border-color: $gray-500;
 $input-transition: border-color 0.2s ease-out, box-shadow 0.2s ease-out;
-$custom-forms-transition: background-color 0.2s ease-out, border-color 0.2s ease-out, box-shadow 0.2s ease-out;
+$custom-forms-transition: background-color 0.2s ease-out,
+  border-color 0.2s ease-out, box-shadow 0.2s ease-out;
 $custom-file-text: (
   en: 'Browse',
   ru: 'Выбрать файл'

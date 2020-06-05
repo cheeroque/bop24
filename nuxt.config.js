@@ -60,6 +60,8 @@ export default {
       'FormSpinbuttonPlugin',
       'DropdownPlugin',
       'CardPlugin',
+      'CollapsePlugin',
+      'ModalPlugin',
       'SpinnerPlugin',
       'ToastPlugin'
     ]

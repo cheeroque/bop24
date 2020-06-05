@@ -11,6 +11,7 @@
 @import 'transitions';
 
 @import 'header';
+@import 'footer';
 @import 'swiper';
 
 @import 'home';
@@ -57,8 +58,8 @@
 //@import "~bootstrap/scss/progress";
 //@import "~bootstrap/scss/media";
 //@import "~bootstrap/scss/list-group";
-//@import "~bootstrap/scss/close";
-//@import "~bootstrap/scss/modal";
+@import "~bootstrap/scss/close";
+@import "~bootstrap/scss/modal";
 //@import "~bootstrap/scss/tooltip";
 @import "~bootstrap/scss/toasts";
 //@import "~bootstrap/scss/popover";

@@ -1,7 +1,5 @@
 .app-header-wrapper {
-  @include media-breakpoint-up(md) {
-    border-bottom: 1px solid $light;
-  }
+  margin-bottom: 1rem;
 }
 
 .app-header {
@@ -427,6 +425,14 @@
   }
 }
 
+.header-tags-wrapper {
+  border-top: 1px solid $light;
+
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
+}
+
 .header-tags {
   display: flex;
   align-items: center;
@@ -452,9 +458,5 @@
       border-color: darken($secondary, 8%);
       background-color: darken($secondary, 8%);
     }
-  }
-
-  @include media-breakpoint-down(sm) {
-    display: none;
   }
 }

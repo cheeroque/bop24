@@ -6,7 +6,8 @@
           <b-container class="slide-wrapper-container">
             <img :src="slide.img" class="slide-img" />
             <div class="slide-content">
-              <div v-html="slide.text" class="slide-text"></div>
+              <!-- eslint-disable-next-line vue/no-v-html -->
+              <div class="slide-text" v-html="slide.text"></div>
               <b-button :href="slide.link" variant="white" class="slide-link">
                 Подробнее
               </b-button>

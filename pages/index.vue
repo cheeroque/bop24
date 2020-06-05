@@ -61,12 +61,137 @@
                   </p>
                 </b-col>
               </b-row>
-              <b-button variant="white" class="mt-auto mr-auto">
+              <b-button variant="white" class="card-link mt-auto mr-auto">
                 Подробнее
               </b-button>
             </div>
           </div>
         </a>
+      </div>
+
+      <div class="mb-5">
+        <p class="section-title">
+          Вдохновляйтесь
+        </p>
+
+        <b-row>
+          <b-col md="7" lg="8" xl="9" class="mb-4 mb-md-0">
+            <a href="#" class="card card-banner card-banner-lg">
+              <img src="/images/cards/vitamins.jpg" class="card-img" />
+              <div class="card-body card-img-overlay text-white">
+                <div class="h-100 d-flex flex-column">
+                  <b-row no-gutters>
+                    <b-col cols="8">
+                      <p class="h3 mb-1">
+                        #витаминоваябомба
+                      </p>
+                      <p>
+                        Лучшие рецеты для&nbsp;иммунитета
+                      </p>
+                    </b-col>
+                  </b-row>
+                  <b-button variant="white" class="card-link mt-auto mr-auto">
+                    Подробнее
+                  </b-button>
+                </div>
+              </div>
+            </a>
+          </b-col>
+          <b-col md="5" lg="4" xl="3" class="mb-4 mb-md-0">
+            <div class="d-flex flex-column h-100">
+              <a
+                href="#"
+                class="card card-banner card-banner-vertical flex-fill mb-3"
+              >
+                <img src="/images/cards/sanitizer.jpg" class="card-img" />
+                <div class="card-body card-img-overlay text-white">
+                  <div class="h-100 d-flex flex-column">
+                    <b-row no-gutters>
+                      <b-col cols="8">
+                        <p>
+                          #блог
+                        </p>
+                      </b-col>
+                    </b-row>
+                    <b-button variant="white" class="card-link mt-auto mx-auto">
+                      Подробнее
+                    </b-button>
+                  </div>
+                </div>
+              </a>
+
+              <b-button variant="outline-secondary">
+                Больше идей
+              </b-button>
+            </div>
+          </b-col>
+        </b-row>
+      </div>
+
+      <swiper-products
+        :items="products"
+        title="Чистый дом: Станьте экспертом по чистоте"
+        class="mb-5"
+      ></swiper-products>
+
+      <div class="mb-5">
+        <p class="section-title">
+          Преимущества для&nbsp;вас
+        </p>
+
+        <b-row>
+          <b-col md="4">
+            <a href="#" class="home-benefit">
+              <b-row align-v="center">
+                <b-col cols="3" md="12" class="mb-3 text-right text-md-center">
+                  <svg-icon name="benefit-delivery" width="60" height="60" />
+                </b-col>
+                <b-col cols="9" md="12" class="mb-3 text-md-center">
+                  <p class="font-weight-medium text-uppercase mb-1">
+                    Бесплатная доставка
+                  </p>
+                  <p class="mb-1">
+                    Условия по&nbsp;бесплатной доставке
+                  </p>
+                </b-col>
+              </b-row>
+            </a>
+          </b-col>
+          <b-col md="4">
+            <a href="#" class="home-benefit">
+              <b-row align-v="center">
+                <b-col cols="3" md="12" class="mb-3 text-right text-md-center">
+                  <svg-icon name="benefit-wallet" width="60" height="60" />
+                </b-col>
+                <b-col cols="9" md="12" class="mb-3 text-md-center">
+                  <p class="font-weight-medium text-uppercase mb-1">
+                    Гарантия возврата
+                  </p>
+                  <p class="mb-1">
+                    Условия по&nbsp;возврату денег
+                  </p>
+                </b-col>
+              </b-row>
+            </a>
+          </b-col>
+          <b-col md="4">
+            <a href="#" class="home-benefit">
+              <b-row align-v="center">
+                <b-col cols="3" md="12" class="mb-3 text-right text-md-center">
+                  <svg-icon name="benefit-target" width="60" height="60" />
+                </b-col>
+                <b-col cols="9" md="12" class="mb-3 text-md-center">
+                  <p class="font-weight-medium text-uppercase mb-1">
+                    Гарантия возврата
+                  </p>
+                  <p class="mb-1">
+                    Условия по&nbsp;возврату денег
+                  </p>
+                </b-col>
+              </b-row>
+            </a>
+          </b-col>
+        </b-row>
       </div>
     </b-container>
   </main>

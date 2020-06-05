@@ -7,6 +7,7 @@
           :key="`tag-${index}`"
           href="#"
           variant="outline-gray-700"
+          class="rounded-pill"
         >
           #{{ tag }}
         </b-button>

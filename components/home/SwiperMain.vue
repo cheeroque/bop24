@@ -16,8 +16,16 @@
         </div>
       </swiper-slide>
       <div slot="pagination" class="swiper-pagination"></div>
-      <div slot="button-prev" class="swiper-nav swiper-button-prev"></div>
-      <div slot="button-next" class="swiper-nav swiper-button-next"></div>
+      <div
+        slot="button-prev"
+        class="swiper-nav swiper-button-prev"
+        @click="swiperPrev"
+      ></div>
+      <div
+        slot="button-next"
+        class="swiper-nav swiper-button-next"
+        @click="swiperNext"
+      ></div>
     </swiper>
   </div>
 </template>
@@ -42,15 +50,24 @@ export default {
       swiperOptions: {
         loop: true,
         grabCursor: true,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev'
-        },
         pagination: {
           el: '.swiper-pagination',
           type: 'bullets'
         }
       }
+    }
+  },
+  computed: {
+    swiper() {
+      return this.$refs.swiperMain.$swiper
+    }
+  },
+  methods: {
+    swiperNext() {
+      this.swiper.slideNext()
+    },
+    swiperPrev() {
+      this.swiper.slidePrev()
     }
   }
 }

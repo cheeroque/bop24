@@ -8,8 +8,8 @@
       </b-col>
       <b-col md="3" xl="2">
         <div class="d-none d-md-flex justify-content-end">
-          <div class="swiper-nav swiper-button-prev"></div>
-          <div class="swiper-nav swiper-button-next"></div>
+          <div class="swiper-nav swiper-button-prev" @click="swiperPrev"></div>
+          <div class="swiper-nav swiper-button-next" @click="swiperNext"></div>
         </div>
       </b-col>
     </b-row>
@@ -21,8 +21,8 @@
           </swiper-slide>
         </swiper>
         <div class="d-md-none">
-          <div class="swiper-nav swiper-button-prev"></div>
-          <div class="swiper-nav swiper-button-next"></div>
+          <div class="swiper-nav swiper-button-prev" @click="swiperPrev"></div>
+          <div class="swiper-nav swiper-button-next" @click="swiperNext"></div>
         </div>
       </b-col>
     </b-row>
@@ -55,10 +55,6 @@ export default {
       swiperOptions: {
         loop: true,
         grabCursor: true,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev'
-        },
         breakpoints: {
           768: {
             slidesPerView: 2,
@@ -74,6 +70,19 @@ export default {
           }
         }
       }
+    }
+  },
+  computed: {
+    swiper() {
+      return this.$refs.swiperProducts.$swiper
+    }
+  },
+  methods: {
+    swiperNext() {
+      this.swiper.slideNext()
+    },
+    swiperPrev() {
+      this.swiper.slidePrev()
     }
   }
 }

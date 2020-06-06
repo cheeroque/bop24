@@ -169,26 +169,6 @@ $catalog-width-xs: 300px;
       overflow-y: auto;
     }
 
-    .catalog-level {
-      &.catalog-level-0 {
-        position: relative;
-        width: $catalog-width-xs;
-      }
-
-      &.catalog-level-1,
-      &.catalog-level-2 {
-        position: absolute;
-        top: 0;
-        left: $catalog-width-xs;
-        width: $catalog-width-xs;
-        height: 100%;
-      }
-
-      &.catalog-level-2 {
-        left: $catalog-width-xs * 2;
-      }
-    }
-
     .catalog-item {
       display: flex;
       position: relative;
@@ -270,7 +250,31 @@ $catalog-width-xs: 300px;
       }
     }
 
+    .catalog-level {
+      &.catalog-level-0 {
+        position: relative;
+        width: $catalog-width-xs;
+      }
+
+      &.catalog-level-1,
+      &.catalog-level-2 {
+        position: absolute;
+        top: 0;
+        left: $catalog-width-xs;
+        width: $catalog-width-xs;
+        height: 100%;
+      }
+
+      &.catalog-level-2 {
+        left: $catalog-width-xs * 2;
+      }
+    }
+
     .catalog-banner-wrapper {
+      display: none;
+    }
+
+    .catalog-close {
       display: none;
     }
 
@@ -303,36 +307,17 @@ $catalog-width-xs: 300px;
       .catalog-wrapper {
         display: flex;
         width: 100%;
+        min-height: 460px;
         transform: none;
         transition: none;
       }
 
-      .catalog-level {
-        padding-bottom: 1rem;
-
-        &.catalog-level-0 {
-          width: 250px;
-          flex: 0 0 250px;
-          border-right: 1px solid $gray-100;
-        }
-
-        &.catalog-level-1 {
-          position: static;
-          width: 250px;
-          flex: 0 0 250px;
-          margin-left: 1rem;
-          border-right: 1px solid $gray-100;
-        }
-
-        &.catalog-level-2 {
-          position: static;
-          width: auto;
-          margin-left: 1rem;
-        }
-      }
-
       .catalog-item {
         border-bottom: none;
+
+        .catalog-link {
+          padding: 0.625rem 1rem;
+        }
 
         .catalog-next {
           opacity: 0.25;
@@ -358,13 +343,86 @@ $catalog-width-xs: 300px;
             }
           }
         }
+
+        &.catalog-item-header {
+          display: none;
+        }
+      }
+
+      .catalog-level {
+        padding-bottom: 1rem;
+
+        &.catalog-level-0 {
+          width: 250px;
+          flex: 0 0 250px;
+          border-right: 1px solid $gray-100;
+
+          .catalog-item {
+            .catalog-link {
+              padding-left: 2.25rem;
+            }
+          }
+        }
+
+        &.catalog-level-1 {
+          position: static;
+          width: 250px;
+          flex: 0 0 250px;
+          margin-left: 1rem;
+          border-right: 1px solid $gray-100;
+        }
+
+        &.catalog-level-2 {
+          position: static;
+          width: auto;
+          margin-left: 1rem;
+
+          .catalog-item {
+            .catalog-link {
+              &:hover {
+                background-color: transparent;
+              }
+            }
+          }
+        }
       }
 
       .catalog-banner-wrapper {
         display: block;
         position: absolute;
-        right: 6rem;
+        right: 3rem;
         top: 1rem;
+        width: calc(#{map-get($container-max-widths, 'lg')} - 500px - 5rem);
+        height: calc(100% - 2rem);
+
+        .catalog-banner {
+          display: flex;
+          align-items: flex-start;
+          justify-content: flex-end;
+        }
+      }
+
+      .catalog-close {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0.75rem;
+        right: 0.75rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        line-height: 0;
+        border-radius: $rounded-pill;
+        background-color: $white;
+        transition: $transition-base;
+
+        .icon {
+          fill: $body-color !important;
+        }
+
+        &:hover {
+          background-color: $light;
+        }
       }
 
       &.level-1,
@@ -377,6 +435,10 @@ $catalog-width-xs: 300px;
 
     @include media-breakpoint-up(xl) {
       width: map-get($container-max-widths, 'xl');
+
+      .catalog-banner-wrapper {
+        width: calc(#{map-get($container-max-widths, 'xl')} - 500px - 5rem);
+      }
     }
   }
 

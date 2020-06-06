@@ -9,10 +9,11 @@
     <transition name="fade">
       <div
         v-show="showMenu"
+        ref="catalogDropdown"
         :class="`level-${menuLevel}`"
         class="catalog-dropdown"
       >
-        <div class="catalog-wrapper">
+        <div ref="catalogWrapper" class="catalog-wrapper">
           <div class="catalog-level catalog-level-0">
             <ul class="list-unstyled">
               <li
@@ -154,6 +155,10 @@
               />
             </a>
           </div>
+
+          <b-button-close class="catalog-close" @click="toggleMenu">
+            <svg-icon name="close" width="14" height="14" />
+          </b-button-close>
         </div>
       </div>
     </transition>
@@ -563,8 +568,33 @@ export default {
     }
   },
   methods: {
+    menuClickOutside() {
+      document.addEventListener('click', (e) => {
+        const menu = e.target.closest('.catalog-dropdown')
+        const menuToggle = e.target.closest('.catalog-toggle')
+        const menuLink = e.target.closest(
+          '.catalog-item:not(.catalog-item-header) .catalog-link'
+        )
+        const menuBanner = e.target.closest('.catalog-dropdown .catalog-banner')
+        if ((!menu && !menuToggle) || menuLink || menuBanner) {
+          this.showMenu = false
+          document.removeEventListener('click', this.menuClickOutside)
+        }
+      })
+    },
     toggleMenu() {
-      this.showMenu = !this.showMenu
+      if (!this.showMenu) {
+        this.menuLevel = 0
+        this.activeLevel0 = null
+        this.hoverLevel0 = null
+        this.activeLevel1 = null
+        this.hoverLevel1 = null
+        this.showMenu = true
+        this.menuClickOutside()
+      } else {
+        this.showMenu = false
+        document.removeEventListener('click', this.menuClickOutside)
+      }
     },
     navigateCatalog(level, index0, index1) {
       this.menuLevel = level

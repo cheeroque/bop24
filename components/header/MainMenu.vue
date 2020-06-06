@@ -20,7 +20,22 @@
                 :key="`menuitem-0-${index0}`"
               >
                 <div class="catalog-item">
-                  <a href="#" class="catalog-link"> #{{ item0.title }} </a>
+                  <a
+                    href="#"
+                    class="catalog-link"
+                    @mouseenter="
+                      hoverCatalog(
+                        $event,
+                        1,
+                        item0.items && item0.items.length > 0 ? index0 : null,
+                        null,
+                        index0,
+                        null
+                      )
+                    "
+                  >
+                    #{{ item0.title }}
+                  </a>
                   <div
                     v-if="item0.items && item0.items.length > 0"
                     class="catalog-next"
@@ -38,8 +53,8 @@
           </div>
           <div
             v-for="(item0, index0) in menuItems"
-            :key="`menupanel-1-${index0}`"
             v-show="activeLevel0 === index0"
+            :key="`menupanel-1-${index0}`"
             class="catalog-level catalog-level-1"
           >
             <ul class="list-unstyled">
@@ -62,7 +77,20 @@
                 :key="`menuitem-1-${index0}-${index1}`"
               >
                 <div class="catalog-item">
-                  <a href="#" class="catalog-link">
+                  <a
+                    href="#"
+                    class="catalog-link"
+                    @mouseenter="
+                      hoverCatalog(
+                        $event,
+                        2,
+                        index0,
+                        item1.items && item1.items.length > 0 ? index1 : null,
+                        index0,
+                        index1
+                      )
+                    "
+                  >
                     {{ item1.title }}
                   </a>
                   <div
@@ -82,13 +110,14 @@
           </div>
           <div
             v-for="(item0, index0) in menuItems"
-            :key="`menupanel-2-${index0}`"
             v-show="activeLevel0 === index0"
+            :key="`menupanel-2-${index0}`"
+            class="flex-fill"
           >
             <div
               v-for="(item1, index1) in item0.items"
-              :key="`menupanel-2-${index0}-${index1}`"
               v-show="activeLevel1 === index1"
+              :key="`menupanel-2-${index0}-${index1}`"
               class="catalog-level catalog-level-2"
             >
               <ul
@@ -115,30 +144,15 @@
                   </a>
                 </li>
               </ul>
-
-              <div v-else>
-                <a
-                  v-if="item1.banner"
-                  :href="item1.banner.link"
-                  class="catalog-banner"
-                >
-                  <img
-                    :src="`/images/mainmenu/${item1.banner.img}.jpg`"
-                    class="img-fluid"
-                  />
-                </a>
-                <a
-                  v-else-if="item0.banner"
-                  :href="item0.banner.link"
-                  class="catalog-banner"
-                >
-                  <img
-                    :src="`/images/mainmenu/${item0.banner.img}.jpg`"
-                    class="img-fluid"
-                  />
-                </a>
-              </div>
             </div>
+          </div>
+          <div v-if="activeBanner" class="catalog-banner-wrapper">
+            <a :href="activeBanner.link" class="catalog-banner">
+              <img
+                :src="`/images/mainmenu/${activeBanner.img}.jpg`"
+                class="img-fluid"
+              />
+            </a>
           </div>
         </div>
       </div>
@@ -153,7 +167,9 @@ export default {
       showMenu: false,
       menuLevel: 0,
       activeLevel0: null,
+      hoverLevel0: null,
       activeLevel1: null,
+      hoverLevel1: null,
       menuItems: [
         {
           title: 'продукты',
@@ -527,6 +543,25 @@ export default {
       ]
     }
   },
+  computed: {
+    activeBanner() {
+      let banner = null
+      if (this.hoverLevel0 !== null) {
+        banner = this.menuItems[this.hoverLevel0].banner
+
+        if (this.hoverLevel1 !== null) {
+          const category = this.menuItems[this.hoverLevel0].items[
+            this.hoverLevel1
+          ]
+          const children = category.items
+
+          if (children && children.length > 0) banner = null
+          else banner = category.banner
+        }
+      }
+      return banner
+    }
+  },
   methods: {
     toggleMenu() {
       this.showMenu = !this.showMenu
@@ -535,6 +570,17 @@ export default {
       this.menuLevel = level
       this.activeLevel0 = index0
       this.activeLevel1 = index1
+    },
+    hoverCatalog(event, level, index0, index1, hoverIndex0, hoverIndex1) {
+      const target = event.target
+      const hover = setTimeout(() => {
+        this.navigateCatalog(level, index0, index1)
+        this.hoverLevel0 = hoverIndex0
+        this.hoverLevel1 = hoverIndex1
+      }, 300)
+      target.addEventListener('mouseout', () => {
+        clearTimeout(hover)
+      })
     }
   }
 }

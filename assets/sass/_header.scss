@@ -6,6 +6,17 @@ $catalog-width-xs: 300px;
 
 .app-header {
   display: flex;
+  top: -100%;
+  background-color: $white;
+  transition: top 0.4s ease-in-out, box-shadow 0.2s ease-in-out;
+  z-index: $zindex-sticky;
+
+  &.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 0.25rem 0.25rem rgba($black, 0.25);
+  }
 
   .header-content {
     flex: 1 1 auto;
@@ -762,5 +773,13 @@ $catalog-width-xs: 300px;
         background-color: darken($secondary, 8%);
       }
     }
+  }
+}
+
+body.header-sticky {
+  padding-top: $header-height;
+
+  @include media-breakpoint-up(lg) {
+    padding-top: $header-height-lg;
   }
 }

@@ -1,3 +1,5 @@
+$catalog-width-xs: 300px;
+
 .app-header-wrapper {
   margin-bottom: 1rem;
 }
@@ -137,6 +139,155 @@
 
       .catalog-toggle {
         padding: 0.25rem 1rem;
+        border: none;
+        background-color: transparent;
+      }
+
+      .catalog-dropdown {
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: $catalog-width-xs;
+        height: calc(100vh - #{$header-height} - 1rem);
+        background-color: $white;
+        box-shadow: 0 0.25rem 0.25rem rgba($black, 0.25);
+        overflow-x: hidden;
+        overflow-y: auto;
+        z-index: $zindex-dropdown;
+
+        .catalog-wrapper {
+          position: relative;
+          width: $catalog-width-xs * 3;
+          transform: translateX(0);
+          transition: transform 0.3s ease-in-out;
+        }
+
+        .catalog-panel {
+          height: 100%;
+          overflow-y: auto;
+        }
+
+        .catalog-level {
+          &.catalog-level-0 {
+            position: relative;
+            width: $catalog-width-xs;
+          }
+
+          &.catalog-level-1,
+          &.catalog-level-2 {
+            position: absolute;
+            top: 0;
+            left: $catalog-width-xs;
+            width: $catalog-width-xs;
+            height: 100%;
+          }
+
+          &.catalog-level-2 {
+            left: $catalog-width-xs * 2;
+          }
+        }
+
+        .catalog-item {
+          display: flex;
+          position: relative;
+          border-bottom: 1px solid $light;
+
+          .catalog-link {
+            display: flex;
+            align-items: center;
+            flex: 1 1 0;
+            padding: 0.75rem 1.75rem;
+            white-space: nowrap;
+            border: none;
+            color: $body-color;
+            background-color: transparent;
+
+            &:hover {
+              font-weight: $font-weight-medium;
+              text-decoration: none;
+              color: $secondary;
+              background-color: $gray-100;
+            }
+          }
+
+          .icon {
+            fill: $secondary;
+          }
+
+          .catalog-next {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 2.5rem;
+            height: 100%;
+
+            .catalog-btn {
+              position: absolute;
+              top: 0;
+              right: 0;
+              width: 100%;
+              height: 100%;
+              padding: 0;
+              border-radius: 0;
+              border: none;
+
+              &:not(:disabled):not(.disabled) {
+                &:focus {
+                  box-shadow: none;
+                }
+              }
+            }
+          }
+
+          &:hover {
+            .catalog-link {
+              font-weight: $font-weight-medium;
+              text-decoration: none;
+              color: $secondary;
+              background-color: $gray-100;
+            }
+          }
+
+          &.catalog-item-header {
+            .catalog-link {
+              font-weight: $font-weight-medium;
+              text-align: center;
+              color: $secondary;
+            }
+          }
+
+          &.catalog-item-all {
+            .catalog-link {
+              font-weight: $font-weight-medium;
+              text-decoration: underline;
+              color: $primary;
+            }
+          }
+        }
+
+        .catalog-banner {
+          display: none;
+        }
+
+        &.level-1 {
+          .catalog-wrapper {
+            transform: translateX(-#{$catalog-width-xs});
+          }
+        }
+
+        &.level-2 {
+          .catalog-wrapper {
+            transform: translateX(-#{$catalog-width-xs * 2});
+          }
+
+          .catalog-level.catalog-level-1 {
+            height: 100%;
+            overflow: hidden;
+          }
+        }
       }
     }
   }

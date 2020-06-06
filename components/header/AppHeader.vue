@@ -52,14 +52,7 @@
         </nav>
         <nav class="navbar navbar-dark navbar-expand navbar-bottom">
           <b-navbar-nav>
-            <b-nav-item-dropdown no-caret toggle-class="catalog-toggle">
-              <template v-slot:button-content>
-                <svg-icon name="catalog-toggle" width="28" height="20" />
-                <span class="caption">
-                  Каталог
-                </span>
-              </template>
-            </b-nav-item-dropdown>
+            <main-menu></main-menu>
           </b-navbar-nav>
           <b-navbar-nav class="ml-auto">
             <li class="flex-fill mr-4 mr-xl-5 d-none d-md-block">
@@ -97,10 +90,12 @@
 </template>
 
 <script>
+import MainMenu from '@/components/header/MainMenu'
 import HeaderTags from '@/components/header/HeaderTags'
 
 export default {
   components: {
+    MainMenu,
     HeaderTags
   },
   data() {

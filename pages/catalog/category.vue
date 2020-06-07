@@ -6,16 +6,16 @@
       <b-col md="4" lg="3" class="d-none d-md-block">
         <div class="catalog-sidebar">
           <collapse-catalog-sidebar
-            v-for="(category, C) in catalog"
+            v-for="(cat, C) in catalog"
             :key="`sidebar-collapse-${C}`"
-            :title="`#${category.title}`"
+            :title="`#${cat.title}`"
             class="mb-2"
           >
             <ul class="list-unstyled mb-0">
               <li
-                v-for="(item, I) in category.items"
+                v-for="(item, I) in cat.items"
                 :key="`item-${C}-${I}`"
-                :class="I === category.items.length - 1 ? null : 'mb-3'"
+                :class="I === cat.items.length - 1 ? null : 'mb-3'"
               >
                 <b-link to="/subcategory" class="font-weight-medium text-reset">
                   {{ item.title }}
@@ -68,7 +68,7 @@
           </b-col>
         </b-row>
 
-        <b-row class="mb-4">
+        <b-row align-v="center" class="mb-4">
           <b-col md="6" lg="4" offset-lg="4">
             <div class="text-lg-center">
               <b-button variant="outline-dark" class="rounded-sm">
@@ -76,6 +76,25 @@
                 <svg-icon name="refresh" width="20" height="20" class="ml-2" />
               </b-button>
             </div>
+          </b-col>
+          <b-col md="6" lg="4">
+            <b-pagination
+              v-model="currentPage"
+              total-rows="100"
+              per-page="12"
+              align="end"
+              hide-goto-end-buttons
+              class="mb-0"
+              prev-class="page-item-prev"
+              next-class="page-item-next"
+            >
+              <template v-slot:prev-text>
+                <svg-icon name="page-prev" width="14" height="14" />
+              </template>
+              <template v-slot:next-text>
+                <svg-icon name="page-next" width="14" height="14" />
+              </template>
+            </b-pagination>
           </b-col>
         </b-row>
       </b-col>
@@ -98,18 +117,13 @@ export default {
         { text: 'Главная', href: '/' },
         { text: 'Каталог', href: '/catalog' },
         { text: 'Продукты', to: '/catalog/category', active: true }
-      ]
+      ],
+      currentPage: 1
     }
   },
   computed: {
     catalog() {
       return this.$store.state.catalog
-    },
-    categories() {
-      const result = []
-      for (let i = 0; i < this.catalog.length; i++)
-        result.push(this.catalog[i].title)
-      return result
     },
     category() {
       return this.$store.state.category

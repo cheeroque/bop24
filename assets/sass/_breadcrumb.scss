@@ -11,26 +11,4 @@
       }
     }
   }
-
-  @include media-breakpoint-down(sm) {
-    font-size: $font-size-base;
-    font-weight: $font-weight-medium;
-
-    .breadcrumb-item {
-      padding-left: 0;
-      color: $body-color;
-
-      a {
-        color: $body-color;
-      }
-
-      &::before {
-        display: none;
-      }
-
-      &:not(.active) {
-        display: none;
-      }
-    }
-  }
 }

@@ -1,6 +1,10 @@
 <template>
   <main class="container">
-    <b-breadcrumb :items="breadcrumbs"></b-breadcrumb>
+    <b-breadcrumb :items="breadcrumbs" class="d-none d-md-flex"></b-breadcrumb>
+
+    <h2 class="font-size-2 font-weight-bold mb-3 d-md-none">
+      Каталог
+    </h2>
 
     <b-row>
       <b-col

@@ -28,9 +28,21 @@
         height: 1.75rem;
         border-color: $gray-800;
         color: $gray-800;
+        transition: $transition-base;
 
         .icon {
           fill: $gray-800;
+          transition: $transition-base;
+        }
+
+        &:not(:disabled):not(.disabled) {
+          &:hover {
+            border-color: $primary;
+
+            .icon {
+              fill: $primary;
+            }
+          }
         }
       }
 

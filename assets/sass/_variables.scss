@@ -150,3 +150,16 @@ $modal-header-padding-y: 0.75rem;
 
 $header-height: calc(3.9375rem + 22px);
 $header-height-lg: calc(1.5rem + 17px + 3.1875rem + 2px);
+
+// Breadcrumb
+
+$breadcrumb-font-size: 0.6875rem;
+$breadcrumb-padding-y: 0;
+$breadcrumb-padding-x: 0;
+$breadcrumb-margin-bottom: 1rem;
+$breadcrumb-item-padding: 0.375rem;
+$breadcrumb-bg: transparent;
+$breadcrumb-divider-color: inherit;
+$breadcrumb-active-color: inherit;
+$breadcrumb-divider: quote("|");
+$breadcrumb-border-radius: 0;

@@ -4,34 +4,34 @@
     <b-container>
       <b-row class="mb-3 mb-lg-5">
         <b-col md="4" class="mb-3 mb-md-0">
-          <a href="#" class="card card-banner card-banner-sm">
+          <b-link to="/catalog" class="card card-banner card-banner-sm">
             <img src="/images/cards/veggies.jpg" class="card-img" />
             <div class="card-body card-img-overlay">
               <span class="text-white">
                 #вегетарианство
               </span>
             </div>
-          </a>
+          </b-link>
         </b-col>
         <b-col md="4" class="mb-3 mb-md-0">
-          <a href="#" class="card card-banner card-banner-sm">
+          <b-link to="/catalog" class="card card-banner card-banner-sm">
             <img src="/images/cards/gardening.jpg" class="card-img" />
             <div class="card-body card-img-overlay">
               <span class="text-white">
                 #всевсад
               </span>
             </div>
-          </a>
+          </b-link>
         </b-col>
         <b-col md="4" class="mb-3 mb-md-0">
-          <a href="#" class="card card-banner card-banner-sm">
+          <b-link to="/catalog" class="card card-banner card-banner-sm">
             <img src="/images/cards/sports.jpg" class="card-img" />
             <div class="card-body card-img-overlay">
               <span class="text-white">
                 #спорт
               </span>
             </div>
-          </a>
+          </b-link>
         </b-col>
       </b-row>
 

@@ -53,6 +53,7 @@ export default {
       'ButtonPlugin',
       'ButtonGroupPlugin',
       'NavbarPlugin',
+      'BreadcrumbPlugin',
       'FormPlugin',
       'FormGroupPlugin',
       'FormInputPlugin',

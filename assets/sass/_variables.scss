@@ -59,7 +59,12 @@ $yiq-contrasted-threshold: 150;
 
 // Gradients
 
-$gradient-blue: linear-gradient(92deg, darken($darkblue, 5%), $darkblue 10%, $teal 90%);
+$gradient-blue: linear-gradient(
+  92deg,
+  darken($darkblue, 5%),
+  $darkblue 10%,
+  $teal 90%
+);
 $gradient-green: linear-gradient(92deg, $blue 10%, $green 90%);
 $gradient-pink: linear-gradient(92deg, $pink 10%, $yellow 90%);
 
@@ -161,5 +166,9 @@ $breadcrumb-item-padding: 0.375rem;
 $breadcrumb-bg: transparent;
 $breadcrumb-divider-color: inherit;
 $breadcrumb-active-color: inherit;
-$breadcrumb-divider: quote("|");
+$breadcrumb-divider: quote('|');
 $breadcrumb-border-radius: 0;
+
+// Responsive embeds
+
+$embed-responsive-aspect-ratios: ((16 3), (16 9), (4 3), (1 1));

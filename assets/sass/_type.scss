@@ -1,12 +1,54 @@
-.font-size-0 { font-size: $font-size-0 !important; }
-.font-size-1 { font-size: $font-size-1 !important; }
-.font-size-2 { font-size: $font-size-2 !important; }
-.font-size-3 { font-size: $font-size-3 !important; }
-.font-size-4 { font-size: $font-size-4 !important; }
-.font-size-5 { font-size: $font-size-5 !important; }
-.font-size-6 { font-size: $font-size-6 !important; }
+.font-size-0 {
+  font-size: $font-size-0 !important;
+}
+.font-size-1 {
+  font-size: $font-size-1 !important;
+}
+.font-size-2 {
+  font-size: $font-size-2 !important;
+}
+.font-size-3 {
+  font-size: $font-size-3 !important;
+}
+.font-size-4 {
+  font-size: $font-size-4 !important;
+}
+.font-size-5 {
+  font-size: $font-size-5 !important;
+}
+.font-size-6 {
+  font-size: $font-size-6 !important;
+}
 
-.font-weight-medium { font-weight: $font-weight-medium !important; }
+@each $breakpoint, $value in $grid-breakpoints {
+  @include media-breakpoint-up($breakpoint) {
+    .font-size-#{$breakpoint}-0 {
+      font-size: $font-size-0 !important;
+    }
+    .font-size-#{$breakpoint}-1 {
+      font-size: $font-size-1 !important;
+    }
+    .font-size-#{$breakpoint}-2 {
+      font-size: $font-size-2 !important;
+    }
+    .font-size-#{$breakpoint}-3 {
+      font-size: $font-size-3 !important;
+    }
+    .font-size-#{$breakpoint}-4 {
+      font-size: $font-size-4 !important;
+    }
+    .font-size-#{$breakpoint}-5 {
+      font-size: $font-size-5 !important;
+    }
+    .font-size-#{$breakpoint}-6 {
+      font-size: $font-size-6 !important;
+    }
+  }
+}
+
+.font-weight-medium {
+  font-weight: $font-weight-medium !important;
+}
 
 a {
   transition: color 0.2s ease-in-out;
@@ -16,7 +58,7 @@ a.text-reset.text-decoration-none,
 a.text-body.text-decoration-none,
 a.text-black.text-decoration-none {
   transition: $transition-base;
-  
+
   &:hover {
     color: $primary !important;
   }

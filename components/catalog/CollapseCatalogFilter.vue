@@ -1,5 +1,5 @@
 <template>
-  <div class="collapse-catalog-sidebar">
+  <div class="collapse-catalog-filter">
     <b-button
       variant="link"
       class="collapse-toggle"
@@ -9,9 +9,12 @@
       <span class="caption">
         {{ title }}
       </span>
-      <svg-icon name="caret" width="12" height="12" />
+      <span class="caret"></span>
     </b-button>
-    <b-collapse v-model="showCollapse" accordion="accordion">
+    <b-collapse
+      v-model="showCollapse"
+      :accordion="accordion ? accordion : null"
+    >
       <div class="collapse-content">
         <slot></slot>
       </div>
@@ -29,12 +32,12 @@ export default {
     visible: {
       type: Boolean,
       default() {
-        return false
+        return true
       }
     },
     accordion: {
       type: String,
-      default: 'sidebar'
+      default: null
     }
   },
   data() {

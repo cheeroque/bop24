@@ -3,7 +3,7 @@
     <b-breadcrumb :items="breadcrumbs" class="d-none d-md-flex"></b-breadcrumb>
 
     <b-row>
-      <b-col md="4" lg="3" class="d-none d-md-block">
+      <b-col md="6" lg="4" xl="3" class="d-none d-md-block">
         <div class="catalog-sidebar">
           <collapse-catalog-sidebar
             v-for="(cat, C) in catalog"
@@ -25,7 +25,7 @@
           </collapse-catalog-sidebar>
         </div>
       </b-col>
-      <b-col md="8" lg="9">
+      <b-col md="6" lg="8" xl="9">
         <b-row align-v="center">
           <b-col md="6" lg="8">
             <b-button
@@ -59,8 +59,8 @@
           <b-col
             v-for="(subcategory, index) in category"
             :key="`subcategory-${index}`"
-            md="6"
-            lg="4"
+            lg="6"
+            xl="4"
           >
             <card-catalog-subcategory
               :item="subcategory"

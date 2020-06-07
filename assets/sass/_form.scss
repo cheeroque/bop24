@@ -5,4 +5,296 @@
     line-height: 1.2;
     color: $gray-700;
   }
+
+  &.custom-switch {
+    .custom-control-label {
+      display: inline-flex;
+      align-items: center;
+
+      &::before,
+      &::after {
+        border-radius: $rounded-pill;
+      }
+
+      &::before {
+        top: calc(50% - 0.5rem);
+        border: none;
+        box-shadow: 0 0 0.675rem rgba($black, 0.1);
+      }
+
+      &::after {
+        top: calc(50% - 0.5rem + 2px);
+      }
+    }
+
+    .custom-control-input:not(:disabled):active {
+      & ~ .custom-control-label {
+        &::before {
+          background-color: $white;
+        }
+
+        &::after {
+          background-color: darken($primary, 10%);
+        }
+      }      
+    }
+
+    .custom-control-input:checked {
+      & ~ .custom-control-label {
+        &::before {
+          background-color: $white;
+        }
+
+        &::after {
+          background-color: $primary;
+        }
+      }
+    }
+
+    &.b-custom-control-lg {
+      padding-left: 4rem;
+
+      .custom-control-label {
+        min-height: 1.75rem;
+
+        &::before {
+          top: calc(50% - 0.875rem);
+          left: -4rem;
+          width: 3.25rem;
+          height: 1.75rem;
+        }
+
+        &::after {
+          top: calc(50% - 0.875rem + 2px);
+          left: calc(-4rem + 2px);
+          width: calc(1.75rem - 4px);
+          height: calc(1.75rem - 4px);
+        }
+      }
+
+      .custom-control-input:checked {
+        & ~ .custom-control-label {
+          &::after {
+            transform: translateX(calc(1.75rem - 4px));
+          }
+        }
+      }
+    }
+
+    &.reversed {
+      padding-left: 0;
+      padding-right: 2.8125rem;
+
+      .custom-control-label {
+        width: 100%;
+
+        &::before {
+          left: auto;
+          right: -2.8125rem;
+        }
+
+        &::after {
+          left: auto;
+          right: calc(-2.8125rem + 2px);
+          transform: translateX(-0.75rem);
+        }
+      }
+
+      .custom-control-input:checked {
+        & ~ .custom-control-label {
+          &::after {
+            transform: translateX(0);
+          }
+        }
+      }
+
+      &.b-custom-control-lg {
+        padding-left: 0;
+        padding-right: 4rem;
+
+        .custom-control-label {
+          &::before {
+            left: auto;
+            right: -4rem;
+          }
+  
+          &::after {
+            left: auto;
+            right: calc(-4rem + 2px);
+            transform: translateX(calc(4px - 1.75rem));
+          }
+        }
+  
+        .custom-control-input:checked {
+          & ~ .custom-control-label {
+            &::after {
+              transform: translateX(0);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.filter-range {
+  .form-control {
+    height: auto;
+    padding: 0.125rem 0.75rem;
+    text-align: center;
+    border-radius: $rounded-pill;
+    border-color: $white;
+    background-color: $white;
+    box-shadow: 0 0 0.675rem rgba($black, 0.1);
+    appearance: none;
+    -moz-appearance: textfield;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+}
+
+.multi-range-wrapper {
+  position: relative;
+  height: 1.5rem;
+
+  .custom-range {
+    position: absolute;
+    top: 0.25rem;
+    left: 0;
+    width: 100%;
+    height: 1rem;
+    pointer-events: none;
+
+    &::-webkit-slider-runnable-track {
+      background-color: transparent;
+    }
+
+    &::-moz-range-track {
+      background-color: transparent;
+    }
+
+    &::-ms-track {
+      background-color: transparent;
+    }
+
+    &::-ms-fill-lower {
+      background-color: transparent;
+    }
+
+    &::-ms-fill-upper {
+      background-color: transparent;
+    }
+
+    &::-webkit-slider-thumb,
+    &::-webkit-slider-thumb:focus,
+    &::-webkit-slider-thumb:active {
+      border-radius: $rounded-pill;
+      background-color: $white;
+      box-shadow: 0 0 0.25rem rgba($black, 0.25);
+    }
+
+    &::-moz-range-thumb,
+    &::-moz-range-thumb:focus,
+    &::-moz-range-thumb:active {
+      border-radius: $rounded-pill;
+      background-color: $white;
+      box-shadow: 0 0 0.25rem rgba($black, 0.25);
+    }
+
+    &::-ms-thumb,
+    &::-ms-thumb:focus,
+    &::-ms-thumb:active {
+      border-radius: $rounded-pill;
+      background-color: $white;
+      box-shadow: 0 0 0.25rem rgba($black, 0.25);
+    }
+
+    & + .custom-range {
+      top: 0.25rem;
+
+      &::-webkit-slider-runnable-track {
+        background-color: transparent;
+        pointer-events: none;
+      }
+
+      &::-moz-range-track {
+        background-color: transparent;
+        pointer-events: none;
+      }
+
+      &::-ms-track {
+        background-color: transparent;
+        pointer-events: none;
+      }
+
+      &::-ms-fill-lower {
+        background-color: transparent;
+      }
+
+      &::-ms-fill-upper {
+        background-color: transparent;
+      }
+    }
+
+    &::-webkit-slider-thumb {
+      pointer-events: all;
+    }
+
+    &::-moz-range-thumb {
+      pointer-events: all;
+      cursor: pointer;
+    }
+
+    &::-ms-thumb {
+      cursor: pointer;
+      pointer-events: all;
+    }
+
+    &:focus {
+      &::-webkit-slider-thumb,
+      &::-webkit-slider-thumb:focus,
+      &::-webkit-slider-thumb:active {
+        box-shadow: 0 0 0.5rem rgba($black, 0.15);
+      }
+
+      &::-moz-range-thumb,
+      &::-moz-range-thumb:focus,
+      &::-moz-range-thumb:active {
+        box-shadow: 0 0 0.5rem rgba($black, 0.15);
+      }
+
+      &::-ms-thumb,
+      &::-ms-thumb:focus,
+      &::-ms-thumb:active {
+        box-shadow: 0 0 0.5rem rgba($black, 0.15);
+      }
+    }
+  }
+
+  .fill {
+    position: absolute;
+    top: calc(50% - 0.1875rem);
+    left: 100%;
+    right: 100%;
+    height: 0.375rem;
+    border-radius: $rounded-pill;
+    background-color: $primary;
+  }
+
+  &::before {
+    display: block;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: calc(50% - 0.1875rem);
+    width: 100%;
+    height: 0.375rem;
+    border-radius: $rounded-pill;
+    background-color: $white;
+    box-shadow: 0 0 0.875rem rgba($black, 0.1);
+  }
 }

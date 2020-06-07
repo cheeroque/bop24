@@ -71,7 +71,12 @@
         <b-row align-v="center" class="mb-4">
           <b-col md="6" lg="4" offset-lg="4">
             <div class="text-lg-center">
-              <b-button variant="outline-dark" class="rounded-sm">
+              <b-button
+                :class="{ busy: isBusy }"
+                variant="link"
+                class="btn-show-more"
+                @click="showMore"
+              >
                 Показать ещё
                 <svg-icon name="refresh" width="20" height="20" class="ml-2" />
               </b-button>
@@ -118,7 +123,8 @@ export default {
         { text: 'Каталог', href: '/catalog' },
         { text: 'Продукты', to: '/catalog/category', active: true }
       ],
-      currentPage: 1
+      currentPage: 1,
+      isBusy: false
     }
   },
   computed: {
@@ -127,6 +133,15 @@ export default {
     },
     category() {
       return this.$store.state.category
+    }
+  },
+  methods: {
+    showMore() {
+      this.isBusy = true
+      const unsetBusy = setTimeout(() => {
+        this.isBusy = false
+        clearTimeout(unsetBusy)
+      }, 2000)
     }
   }
 }

@@ -187,15 +187,65 @@
             </b-form-radio>
           </b-form-radio-group>
         </div>
-        <b-row class="mb-3 mb-md-0">
-          <b-col
-            v-for="i in 15"
-            :key="`product-${i}`"
-            lg="6"
-            xl="4"
-            class="mb-3 mb-md-30"
+        <transition name="fade" mode="out-in">
+          <b-row
+            :key="viewMode"
+            :class="`catalog-items-${viewMode}`"
+            class="catalog-items"
           >
-            <card-product :item="product"></card-product>
+            <b-col
+              :lg="viewMode === 'table' ? 12 : 6"
+              :xl="viewMode === 'table' ? 12 : 4"
+              :class="viewMode === 'table' ? 'mb-2' : 'mb-3 mb-lg-30'"
+              cols="12"
+            >
+              <card-product :item="productDiscounted"></card-product>
+            </b-col>
+            <b-col
+              v-for="i in 17"
+              :key="`product-${i}`"
+              :lg="viewMode === 'table' ? 12 : 6"
+              :xl="viewMode === 'table' ? 12 : 4"
+              :class="viewMode === 'table' ? 'mb-2' : 'mb-3 mb-lg-30'"
+              cols="12"
+            >
+              <card-product :item="product"></card-product>
+            </b-col>
+          </b-row>
+        </transition>
+
+        <b-row align-v="center" class="mb-4">
+          <b-col lg="4" offset-lg="4">
+            <div class="text-center">
+              <b-button
+                :class="{ busy: isBusy }"
+                variant="link"
+                class="btn-show-more"
+                @click="showMore"
+              >
+                Показать ещё
+                <svg-icon name="refresh" width="20" height="20" class="ml-2" />
+              </b-button>
+            </div>
+          </b-col>
+          <b-col lg="4" class="d-none d-lg-block">
+            <b-pagination
+              v-model="currentPage"
+              total-rows="100"
+              per-page="12"
+              align="end"
+              hide-goto-end-buttons
+              class="mb-0"
+              prev-class="page-item-prev"
+              next-class="page-item-next"
+            >
+              <template v-slot:prev-text>
+                <svg-icon name="page-prev" width="14" height="14" />
+              </template>
+              <template v-slot:next-text>
+                <svg-icon name="page-next" width="14" height="14" />
+              </template>
+            </b-pagination>
           </b-col>
         </b-row>
       </b-col>
@@ -225,11 +275,19 @@ export default {
         { text: 'Мясо', to: '/catalog/subcategory', active: true }
       ],
       currentPage: 1,
+      isBusy: false,
       product: {
         title: 'Макароны без яиц Antico Pastificio “Пенне Дзита Ригате” 500 г',
         price: '162,50',
         rating: 5,
         img: '/images/products/pasta.jpg'
+      },
+      productDiscounted: {
+        title: 'Макароны без яиц Antico Pastificio “Пенне Дзита Ригате” 500 г',
+        price: '161,17',
+        rating: 5,
+        img: '/images/products/pasta.jpg',
+        discount: 10
       },
       activeSort: { value: 'recommended', text: 'Мы рекомендуем' },
       sortOptions: [
@@ -279,6 +337,13 @@ export default {
     },
     setPrice(price) {
       this.price = price
+    },
+    showMore() {
+      this.isBusy = true
+      const unsetBusy = setTimeout(() => {
+        this.isBusy = false
+        clearTimeout(unsetBusy)
+      }, 2000)
     }
   }
 }

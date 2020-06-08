@@ -69,8 +69,8 @@
         </b-row>
 
         <b-row align-v="center" class="mb-4">
-          <b-col md="6" lg="4" offset-lg="4">
-            <div class="text-lg-center">
+          <b-col lg="4" offset-lg="4">
+            <div class="text-center">
               <b-button
                 :class="{ busy: isBusy }"
                 variant="link"
@@ -82,7 +82,7 @@
               </b-button>
             </div>
           </b-col>
-          <b-col md="6" lg="4">
+          <b-col lg="4" class="d-none d-lg-block">
             <b-pagination
               v-model="currentPage"
               total-rows="100"

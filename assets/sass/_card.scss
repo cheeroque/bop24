@@ -12,7 +12,7 @@ $img-width-table: 7rem;
       }
 
       & + .icon-rating {
-        margin-left: 0.25rem;
+        margin-left: 0.125rem;
       }
     }
   }
@@ -198,6 +198,17 @@ $img-width-table: 7rem;
 
     .card-body {
       padding: 0.5rem 0.75rem;
+
+      .item-title {
+        display: block;
+        margin-bottom: 1rem;
+        color: inherit;
+
+        &:hover {
+          text-decoration: none;
+          color: $secondary;
+        }
+      }
     }
 
     .item-price {
@@ -397,12 +408,6 @@ $img-width-table: 7rem;
           flex: 1 1 auto;
           align-items: center;
           margin-right: 1rem;
-
-          .icon-rating {
-            & + .icon-rating {
-              margin-left: 0.125rem;
-            }
-          }
         }
 
         .flex-fill {
@@ -519,12 +524,6 @@ $img-width-table: 7rem;
             display: flex;
             flex: 1 1 auto;
             align-items: center;
-
-            .icon-rating {
-              & + .icon-rating {
-                margin-left: 0.125rem;
-              }
-            }
           }
 
           .btn {

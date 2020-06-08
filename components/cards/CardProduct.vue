@@ -26,9 +26,9 @@
       </div>
     </div>
     <div class="card-body">
-      <p class="item-title">
+      <b-link to="/catalog/item" class="item-title">
         {{ item.title }}
-      </p>
+      </b-link>
       <div class="item-price">
         <p class="caption">
           Цена за&nbsp;1&nbsp;уп.

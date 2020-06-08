@@ -11,7 +11,6 @@
               :data-src="`/images/slides/${slide.img}.jpg`"
               class="slide-img swiper-lazy"
             />
-            <!-- <img :src="slide.img" class="slide-img" /> -->
             <div class="slide-content">
               <!-- eslint-disable-next-line vue/no-v-html -->
               <div class="slide-text" v-html="slide.text"></div>

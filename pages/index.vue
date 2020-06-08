@@ -47,7 +47,7 @@
           Велосипеды
         </p>
 
-        <a href="#" class="card card-banner card-banner-lg">
+        <b-link to="/catalog" class="card card-banner card-banner-lg">
           <img src="/images/cards/bike.jpg" class="card-img" />
           <div class="card-body card-img-overlay text-white">
             <div class="h-100 d-flex flex-column">
@@ -66,7 +66,7 @@
               </b-button>
             </div>
           </div>
-        </a>
+        </b-link>
       </div>
 
       <div class="mb-5">
@@ -76,7 +76,7 @@
 
         <b-row>
           <b-col md="7" lg="8" xl="9" class="mb-4 mb-md-0">
-            <a href="#" class="card card-banner card-banner-lg">
+            <b-link to="/catalog" class="card card-banner card-banner-lg">
               <img src="/images/cards/vitamins.jpg" class="card-img" />
               <div class="card-body card-img-overlay text-white">
                 <div class="h-100 d-flex flex-column">
@@ -95,12 +95,12 @@
                   </b-button>
                 </div>
               </div>
-            </a>
+            </b-link>
           </b-col>
           <b-col md="5" lg="4" xl="3" class="mb-4 mb-md-0">
             <div class="d-flex flex-column h-100">
-              <a
-                href="#"
+              <b-link
+                to="/blog/item"
                 class="card card-banner card-banner-vertical flex-fill mb-3"
               >
                 <img src="/images/cards/sanitizer.jpg" class="card-img" />
@@ -118,9 +118,9 @@
                     </b-button>
                   </div>
                 </div>
-              </a>
+              </b-link>
 
-              <b-button variant="outline-secondary">
+              <b-button to="/blog" variant="outline-secondary">
                 Больше идей
               </b-button>
             </div>
@@ -220,37 +220,37 @@ export default {
       swiperItems: [
         {
           img: '01',
-          link: '#',
+          link: '/catalog',
           text: `<h2>#stopcovid</h2><p>Поддержим масочный режим</p>`,
           style: { color: '#ffffff', backgroundColor: '#18d4c9' }
         },
         {
           img: '02',
-          link: '#',
+          link: '/catalog',
           text: `<h2>#stopcovid</h2><p>Поддержим масочный режим</p>`,
           style: { color: '#ffffff', backgroundColor: '#e03e7e' }
         },
         {
           img: '03',
-          link: '#',
+          link: '/catalog',
           text: `<h2>#stopcovid</h2><p>Поддержим масочный режим</p>`,
           style: { color: '#ffffff', backgroundColor: '#0173b4' }
         },
         {
           img: '04',
-          link: '#',
+          link: '/catalog',
           text: `<h2>#stopcovid</h2><p>Поддержим масочный режим</p>`,
           style: { color: '#ffffff', backgroundColor: '#f6a429' }
         },
         {
           img: '05',
-          link: '#',
+          link: '/catalog',
           text: `<h2>#stopcovid</h2><p>Поддержим масочный режим</p>`,
           style: { color: '#ffffff', backgroundColor: '#46aae1' }
         },
         {
           img: '06',
-          link: '#',
+          link: '/catalog',
           text: `<h2>#stopcovid</h2><p>Поддержим масочный режим</p>`,
           style: { color: '#636363', backgroundColor: '#ffe177' }
         }

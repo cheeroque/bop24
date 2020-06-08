@@ -22,7 +22,7 @@
               >
                 <div class="catalog-item">
                   <a
-                    href="#"
+                    href="/catalog/category"
                     class="catalog-link"
                     @mouseenter="
                       hoverCatalog(
@@ -69,7 +69,7 @@
                 </button>
               </li>
               <li class="catalog-item catalog-item-all">
-                <a href="#" class="catalog-link">
+                <a href="/catalog/category" class="catalog-link">
                   весь раздел
                 </a>
               </li>
@@ -79,7 +79,7 @@
               >
                 <div class="catalog-item">
                   <a
-                    href="#"
+                    href="/catalog/subcategory"
                     class="catalog-link"
                     @mouseenter="
                       hoverCatalog(
@@ -140,7 +140,7 @@
                   :key="`menuitem-2-${index0}-${index1}-${index2}`"
                   class="catalog-item"
                 >
-                  <a href="#" class="catalog-link">
+                  <a href="/catalog/subcategory" class="catalog-link">
                     {{ item2.title }}
                   </a>
                 </li>

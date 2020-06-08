@@ -3,7 +3,11 @@
     <b-container class="my-4">
       <b-button-group class="header-tags btn-group-pills">
         <div v-for="(tag, index) in tags" :key="`tag-${index}`" class="item">
-          <b-button href="#" variant="outline-gray-700" class="rounded-pill">
+          <b-button
+            href="/catalog/category"
+            variant="outline-gray-700"
+            class="rounded-pill"
+          >
             #{{ tag }}
           </b-button>
         </div>

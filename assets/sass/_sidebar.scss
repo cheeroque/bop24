@@ -1,0 +1,48 @@
+.b-sidebar {
+  .b-sidebar-header {
+    display: flex;
+    align-items: center;
+
+    .sidebar-title {
+      flex: 1 1 0;
+    }
+
+    .close {
+      float: none;
+      display: flex;
+      flex: 0 0 auto;
+      align-items: center;
+      justify-content: center;
+      margin-left: 0.5rem;
+      padding: 0.25rem;
+      border-radius: $rounded-pill;
+      background-color: $white;
+      transition: $transition-base;
+
+      &:hover {
+        background-color: $light;
+      }
+    }
+  }
+}
+
+.sidebar-product-info {
+  .b-sidebar {
+    .b-sidebar-header {
+      margin-bottom: 1.5rem;
+    }
+
+    & > .b-sidebar-body {
+      padding: 1.25rem;
+    }
+  }
+
+  .sidebar-title {
+    font-weight: $font-weight-medium;
+    text-align: center;
+  }
+
+  @include media-breakpoint-up(md) {
+    display: none;
+  }
+}

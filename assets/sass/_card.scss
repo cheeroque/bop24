@@ -311,6 +311,43 @@ $img-width-table: 7rem;
       margin-bottom: 0.5rem;
     }
   }
+
+  &.card-review-filter {
+    border-radius: 0;
+    border: none;
+    background-color: transparent;
+
+    .card-header {
+      padding: calc(0.5rem + 2px) 0;
+      font-weight: $font-weight-medium;
+      line-height: $input-btn-line-height;
+      border: none;
+      background-color: transparent;
+    }
+
+    .card-body {
+      padding: 0.5rem 0;
+    }
+
+    .card-footer {
+      padding: 0.5rem 0;
+      font-weight: $font-weight-medium;
+      border: none;
+      background-color: transparent;
+    }
+
+    .card-rating {
+      .icon-rating {
+        & + .icon-rating {
+          margin-left: 0.25rem;
+        }
+      }
+
+      .rating-caption {
+        color: $gray-700;
+      }
+    }
+  }
 }
 
 .catalog-items {
@@ -512,9 +549,10 @@ $img-width-table: 7rem;
 
 .card-rating {
   display: flex;
+  align-items: center;
 
   .icon-rating {
-    fill: $light;
+    fill: $gray-300;
 
     &.icon-rating-full {
       fill: $orange;
@@ -523,6 +561,11 @@ $img-width-table: 7rem;
     & + .icon-rating {
       margin-left: 0.125rem;
     }
+  }
+
+  .rating-caption {
+    margin-left: 2rem;
+    font-size: $font-size-1;
   }
 }
 

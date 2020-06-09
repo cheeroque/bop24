@@ -73,6 +73,32 @@ a.text-black.text-decoration-none {
   color: $gray-700;
 }
 
+.text-underline {
+  text-decoration: underline !important;
+}
+
 .text-striked {
   text-decoration: line-through;
+}
+
+.list-specs {
+  & > li {
+    display: flex;
+    margin-bottom: 0.5rem;
+
+    .title,
+    .value {
+      flex: 0 0 auto;
+    }
+
+    .spacer {
+      flex: 1 1 0;
+      margin: 0 0.125rem;
+
+      &.spacer-dots {
+        margin-bottom: 0.125rem;
+        border-bottom: 1px dotted $body-color;
+      }
+    }
+  }
 }

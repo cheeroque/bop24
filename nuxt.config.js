@@ -66,8 +66,8 @@ export default {
       'CardPlugin',
       'CollapsePlugin',
       'ModalPlugin',
-      'SpinnerPlugin',
-      'ToastPlugin'
+      'SidebarPlugin',
+      'SpinnerPlugin'
     ]
   },
 

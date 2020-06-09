@@ -41,9 +41,11 @@
   }
 
   &.swiper-main {
+    height: 185px;
     margin-bottom: 1rem;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+    background-color: $gray-50;
 
     .slide-wrapper-container {
       position: relative;
@@ -163,6 +165,7 @@
     }
 
     @include media-breakpoint-up(md) {
+      height: 300px;
       padding-left: 0;
       padding-right: 0;
 
@@ -203,6 +206,7 @@
     }
 
     @include media-breakpoint-up(lg) {
+      height: 415px;
       margin-bottom: $grid-gutter-width;
 
       .slide-wrapper-container {
@@ -318,6 +322,23 @@
   }
 
   &.swiper-catalog {
+    position: relative;
+    background-color: $gray-50;
+
+    &::before {
+      display: block;
+      content: '';
+      padding-bottom: 80%;
+    }
+
+    & > .swiper-container {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+
     .swiper-pagination {
       position: absolute;
       

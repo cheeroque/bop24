@@ -19,6 +19,9 @@
 .font-size-6 {
   font-size: $font-size-6 !important;
 }
+.font-size-base {
+  font-size: $font-size-base !important;
+}
 
 @each $breakpoint, $value in $grid-breakpoints {
   @include media-breakpoint-up($breakpoint) {
@@ -42,6 +45,9 @@
     }
     .font-size-#{$breakpoint}-6 {
       font-size: $font-size-6 !important;
+    }
+    .font-size-#{$breakpoint}-base {
+      font-size: $font-size-base !important;
     }
   }
 }

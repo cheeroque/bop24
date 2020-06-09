@@ -21,6 +21,13 @@
                 </a>
               </p>
             </div>
+            <cart-item
+              v-for="(item, index) in cartItems"
+              :key="`cart-item-${index}`"
+              :item="item"
+              @remove="removeItem(index)"
+            >
+            </cart-item>
           </b-col>
           <b-col md="6" lg="5" xl="4">
             <div class="mb-2 mb-md-3 px-md-3">
@@ -28,7 +35,7 @@
                 <b-form-input
                   type="text"
                   placeholder="Введите промокод"
-                  class="rounded-sm border-gray-600"
+                  class="rounded-sm border-gray-600 bg-transparent"
                 ></b-form-input>
                 <b-input-group-append>
                   <b-button variant="gray-600" class="rounded-sm">
@@ -161,13 +168,35 @@
 </template>
 
 <script>
+import CartItem from '@/components/cart/CartItem'
+
 export default {
+  components: {
+    CartItem
+  },
   data() {
     return {
       breadcrumbs: [
         { text: 'Главная', href: '/' },
         { text: 'Корзина', to: '/cart', active: true }
-      ]
+      ],
+      item: {
+        title: 'Набор специй Antico Pastificio “Пенне Дзита Ригате” 100 г',
+        vendorCode: 'Артикул',
+        img: 'groceries-milk',
+        stock: 100,
+        count: 1,
+        price: '162,50'
+      },
+      cartItems: []
+    }
+  },
+  mounted() {
+    for (let i = 0; i < 8; i++) this.cartItems.push(this.item)
+  },
+  methods: {
+    removeItem(index) {
+      this.cartItems.splice(index, 1)
     }
   }
 }

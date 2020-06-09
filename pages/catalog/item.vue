@@ -190,7 +190,7 @@
                 </b-button>
               </b-col>
               <b-col lg="6" class="mb-3 mb-lg-0 d-none d-lg-block">
-                <div class="card card-catalog-item-controls">
+                <div class="card card-white card-catalog-item-controls">
                   <div class="card-body">
                     <div class="rating-wrapper">
                       <div class="card-rating">

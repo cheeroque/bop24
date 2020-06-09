@@ -1,6 +1,13 @@
 $img-width-table: 7rem;
 
 .card {
+  &.card-white {
+    border-radius: $border-radius-sm;
+    border: none;
+    background-color: $white;
+    box-shadow: 0 0.25rem 0.25rem rgba($black, 0.15);
+  }
+
   &.card-banner {
     border-radius: 0;
     border: none;

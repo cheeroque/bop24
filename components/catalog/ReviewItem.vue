@@ -1,12 +1,12 @@
 <template>
   <div class="product-review">
     <div class="userpic d-none d-lg-block">
-      <img :src="`/images/uploads/users/${item.author.img}.jpg`" />
+      <img :src="`/images/users/${item.author.img}.jpg`" />
     </div>
     <div class="review-content">
       <div class="d-flex align-items-center mb-3 mb-lg-4">
         <div class="userpic d-lg-none">
-          <img :src="`/images/uploads/users/${item.author.img}.jpg`" />
+          <img :src="`/images/users/${item.author.img}.jpg`" />
         </div>
         <div class="mr-30">
           <p class="font-weight-medium mb-2">

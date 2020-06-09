@@ -71,7 +71,7 @@
                   Избранное
                 </span>
               </b-nav-item>
-              <b-nav-item to="/favorites" class="nav-item-cart">
+              <b-nav-item to="/cart" class="nav-item-cart">
                 <div class="icon-wrapper">
                   <svg-icon name="cart" width="22" height="20" />
                   <span class="cart-count">
@@ -87,7 +87,7 @@
         </div>
       </b-container>
     </header>
-    <header-tags></header-tags>
+    <header-tags v-if="showTags"></header-tags>
   </div>
 </template>
 
@@ -174,6 +174,11 @@ export default {
         { text: 'Новинки', link: 'new' },
         { text: 'Помощь', link: 'help', itemClass: 'item-help' }
       ]
+    }
+  },
+  computed: {
+    showTags() {
+      return this.$route.path === '/' || this.$route.path === '/catalog'
     }
   },
   created() {

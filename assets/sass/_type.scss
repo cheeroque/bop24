@@ -56,13 +56,26 @@
   font-weight: $font-weight-medium !important;
 }
 
+.line-height-100 {
+  line-height: 1 !important;
+}
+.line-height-120 {
+  line-height: 1.2 !important;
+}
+.line-height-150 {
+  line-height: 1.5 !important;
+}
+.line-height-reset {
+  line-height: inherit !important;
+}
+
 a {
   transition: color 0.2s ease-in-out;
 }
 
-a.text-reset.text-decoration-none,
-a.text-body.text-decoration-none,
-a.text-black.text-decoration-none {
+a:not(.card).text-reset.text-decoration-none,
+a:not(.card).text-body.text-decoration-none,
+a:not(.card).text-black.text-decoration-none {
   transition: $transition-base;
 
   &:hover {

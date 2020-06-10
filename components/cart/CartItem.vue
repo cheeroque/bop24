@@ -14,9 +14,9 @@
       </div>
       <div class="cart-item-controls">
         <p
-          v-text="item.stock ? 'В\xA0наличии' : 'Нет в\xA0наличии'"
           :class="item.stock ? 'text-success' : 'text-danger'"
           class="stock"
+          v-text="item.stock ? 'В\xA0наличии' : 'Нет в\xA0наличии'"
         ></p>
         <b-form-spinbutton v-model="item.count" inline></b-form-spinbutton>
         <p class="price">{{ item.price }}&nbsp;р.</p>

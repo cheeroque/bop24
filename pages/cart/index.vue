@@ -22,9 +22,9 @@
               </p>
             </div>
             <cart-item
-              v-for="(item, index) in cartItems"
+              v-for="(cartItem, index) in cartItems"
               :key="`cart-item-${index}`"
-              :item="item"
+              :item="cartItem"
               @remove="removeItem(index)"
             >
             </cart-item>

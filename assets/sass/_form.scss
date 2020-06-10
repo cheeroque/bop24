@@ -25,6 +25,15 @@
     }
   }
 
+  .custom-control-input:disabled {
+    & ~ .custom-control-label {
+      &::before {
+        border-color: rgba($primary, 0.25);
+        background-color: transparent;
+      }
+    }
+  }
+
   .custom-control-input:focus:not(:checked) {
     & ~ .custom-control-label {
       &::before {

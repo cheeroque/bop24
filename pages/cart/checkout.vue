@@ -20,6 +20,7 @@
                   v-model="entityType"
                   size="lg"
                   class="row mb-2 mb-lg-0"
+                  @change="setDeliveryOptions"
                 >
                   <b-col lg="6" class="mb-3">
                     <b-form-radio value="physical">
@@ -57,10 +58,14 @@
                   <b-link
                     href="#"
                     class="card card-white text-reset text-decoration-none h-100"
-                    @click="deliveryMethod = 'self'"
+                    @click="setDeliveryMethod('self')"
                   >
                     <div class="card-body d-flex flex-column">
-                      <b-form-radio value="self" class="mb-4"></b-form-radio>
+                      <b-form-radio
+                        :disabled="entityType === 'legal'"
+                        value="self"
+                        class="mb-4"
+                      ></b-form-radio>
                       <p class="font-size-3 font-weight-medium">
                         Самовывоз
                       </p>
@@ -77,7 +82,7 @@
                   <b-link
                     href="#"
                     class="card card-white text-reset text-decoration-none h-100"
-                    @click="deliveryMethod = 'courier'"
+                    @click="setDeliveryMethod('courier')"
                   >
                     <div class="card-body d-flex flex-column">
                       <b-form-radio value="courier" class="mb-4"></b-form-radio>
@@ -97,10 +102,14 @@
                   <b-link
                     href="#"
                     class="card card-white text-reset text-decoration-none h-100"
-                    @click="deliveryMethod = 'post'"
+                    @click="setDeliveryMethod('post')"
                   >
                     <div class="card-body d-flex flex-column">
-                      <b-form-radio value="post" class="mb-4"></b-form-radio>
+                      <b-form-radio
+                        :disabled="entityType === 'legal'"
+                        value="post"
+                        class="mb-4"
+                      ></b-form-radio>
                       <p class="font-size-3 font-weight-medium">
                         Почта России
                       </p>
@@ -757,12 +766,24 @@ export default {
         { text: 'Оформление заказа', to: '/cart/checkout', active: true }
       ],
       privateAddress: false,
-      entityType: 'legal',
+      entityType: 'physical',
       deliveryMethod: 'self',
       selfDeliveryMode: 'map',
       paymentMethod: 'online',
       paymentMethodLegal: 'transfer',
       companyInfo: null
+    }
+  },
+  mounted() {
+    if (this.entityType === 'legal') this.deliveryMethod = 'courier'
+  },
+  methods: {
+    setDeliveryOptions(value) {
+      if (value === 'legal') this.deliveryMethod = 'courier'
+    },
+    setDeliveryMethod(value) {
+      if (this.entityType === 'legal') this.deliveryMethod = 'courier'
+      else this.deliveryMethod = value
     }
   }
 }

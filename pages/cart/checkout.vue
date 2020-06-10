@@ -614,11 +614,26 @@
           <b-form class="mb-4 mb-lg-5">
             <b-row>
               <b-col md="6">
-                <b-row>
+                <b-row align-v="center">
                   <b-col lg="6">
+                    <div class="d-flex align-items-center mb-3">
+                      <p class="mb-0 mr-3">
+                        Контактные данные
+                      </p>
+                      <b-form-file
+                        v-model="companyInfo"
+                        class="ml-auto custom-file-icon"
+                      ></b-form-file>
+                    </div>
+                  </b-col>
+                  <b-col lg="6" class="d-none d-lg-block">
                     <p>
-                      Контактные данные
+                      Адрес получения
                     </p>
+                  </b-col>
+                </b-row>
+                <b-row>
+                  <b-col lg="6" class="pb-3">
                     <b-form-group>
                       <b-form-input type="text" placeholder="ИНН">
                       </b-form-input>
@@ -647,8 +662,8 @@
                       </b-form-input>
                     </b-form-group>
                   </b-col>
-                  <b-col lg="6" class="d-flex flex-column">
-                    <p>
+                  <b-col lg="6" class="d-flex flex-column pb-3">
+                    <p class="d-lg-none">
                       Адрес получения
                     </p>
                     <b-form-group>
@@ -742,11 +757,12 @@ export default {
         { text: 'Оформление заказа', to: '/cart/checkout', active: true }
       ],
       privateAddress: false,
-      entityType: 'physical',
+      entityType: 'legal',
       deliveryMethod: 'self',
       selfDeliveryMode: 'map',
       paymentMethod: 'online',
-      paymentMethodLegal: 'transfer'
+      paymentMethodLegal: 'transfer',
+      companyInfo: null
     }
   }
 }

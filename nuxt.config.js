@@ -62,6 +62,7 @@ export default {
       'FormCheckboxPlugin',
       'FormTextareaPlugin',
       'FormSpinbuttonPlugin',
+      'FormFilePlugin',
       'InputGroupPlugin',
       'DropdownPlugin',
       'CardPlugin',

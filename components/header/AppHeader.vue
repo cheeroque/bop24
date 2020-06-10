@@ -12,7 +12,7 @@
             </b-navbar-brand>
             <b-navbar-nav class="w-100">
               <li class="flex-fill d-md-none">
-                <b-form-input type="search" size="sm"></b-form-input>
+                <dropdown-search size="sm"></dropdown-search>
               </li>
               <b-nav-item-dropdown no-caret toggle-class="menu-toggle">
                 <template v-slot:button-content>
@@ -57,7 +57,7 @@
             </b-navbar-nav>
             <b-navbar-nav class="ml-auto">
               <li class="flex-fill mr-4 mr-xl-5 d-none d-md-block">
-                <b-form-input type="search"></b-form-input>
+                <dropdown-search></dropdown-search>
               </li>
               <b-nav-item to="/account" class="d-none d-md-flex">
                 <svg-icon name="account" width="22" height="20" />
@@ -93,11 +93,13 @@
 
 <script>
 import MainMenu from '@/components/header/MainMenu'
+import DropdownSearch from '@/components/header/DropdownSearch'
 import HeaderTags from '@/components/header/HeaderTags'
 
 export default {
   components: {
     MainMenu,
+    DropdownSearch,
     HeaderTags
   },
   data() {

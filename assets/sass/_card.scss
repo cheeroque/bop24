@@ -235,6 +235,7 @@ $img-width-table: 7rem;
 
       .btn-cart {
         width: 100%;
+        max-width: 10rem;
       }
 
       .b-form-spinbutton {
@@ -291,6 +292,33 @@ $img-width-table: 7rem;
                 fill: $magenta;
                 stroke: $magenta;
               }
+            }
+          }
+
+          &.btn-remove {
+            .icon {
+              stroke: none;
+              fill: $gray-500;
+              transition: $transition-base;
+            }
+
+            &:not(:disabled):not(.disabled) {
+              &:hover {
+                .icon {
+                  stroke: none;
+                  fill: $secondary;
+                }
+              }
+            }
+
+            @include media-breakpoint-up(lg) {
+              position: absolute;
+              top: 0.5rem;
+              right: 0.5rem;
+              padding: 0.625rem;
+              border: none;
+              border-radius: $rounded-pill;
+              background-color: $gray-100;
             }
           }
         }
@@ -456,7 +484,7 @@ $img-width-table: 7rem;
           }
         }
 
-        .btn-fav {
+        .btn-icon {
           position: absolute;
           top: 0;
           right: 0;

@@ -4,7 +4,7 @@
       <div class="embed-responsive embed-responsive-4by3">
         <div class="embed-responsive-item d-flex">
           <img :src="item.img" class="card-img" />
-          <div class="card-rating">
+          <div v-if="!hasRemove" class="card-rating">
             <svg-icon
               v-for="i in item.rating"
               :key="`star-${i}-full`"
@@ -77,6 +77,15 @@
         </div>
       </transition>
       <b-button
+        v-if="hasRemove"
+        :class="{ active: inFav }"
+        variant="link"
+        class="btn-icon btn-remove ml-2"
+      >
+        <svg-icon name="close" width="14" height="14" />
+      </b-button>
+      <b-button
+        v-else
         :class="{ active: inFav }"
         variant="link"
         class="btn-icon btn-fav ml-2"
@@ -95,6 +104,12 @@ export default {
     item: {
       type: Object,
       required: true
+    },
+    hasRemove: {
+      type: Boolean,
+      default() {
+        return false
+      }
     }
   },
   data() {

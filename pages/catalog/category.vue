@@ -25,7 +25,7 @@
           </collapse-catalog-sidebar>
         </div>
       </b-col>
-      <b-col md="6" lg="8" xl="9">
+      <b-col md="6" lg="8" xl="9" class="overflow-hidden">
         <b-row align-v="center">
           <b-col md="6" lg="8">
             <b-button

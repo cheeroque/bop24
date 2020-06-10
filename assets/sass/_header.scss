@@ -464,8 +464,6 @@ $catalog-width-xs: 300px;
   }
 
   .form-control {
-    border-radius: $border-radius-sm;
-
     &.form-control-sm {
       height: auto;
       padding-top: 0.3125rem;
@@ -598,7 +596,6 @@ $catalog-width-xs: 300px;
             margin-left: 0.5rem;
             padding: 0.5rem;
             white-space: nowrap;
-            border-radius: $border-radius-sm;
             border: 1px solid $light;
             color: $body-color;
             transition: $transition-base;

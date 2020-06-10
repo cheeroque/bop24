@@ -35,10 +35,10 @@
                 <b-form-input
                   type="text"
                   placeholder="Введите промокод"
-                  class="rounded-sm border-gray-600 bg-transparent"
+                  class="border-gray-600 bg-transparent"
                 ></b-form-input>
                 <b-input-group-append>
-                  <b-button variant="gray-600" class="rounded-sm">
+                  <b-button variant="gray-600">
                     Применить
                   </b-button>
                 </b-input-group-append>
@@ -104,12 +104,7 @@
                     </tfoot>
                   </table>
                 </div>
-                <b-button
-                  to="/cart/checkout"
-                  variant="primary"
-                  class="rounded-sm"
-                  block
-                >
+                <b-button to="/cart/checkout" variant="primary" block>
                   Оформить заказ
                 </b-button>
               </div>

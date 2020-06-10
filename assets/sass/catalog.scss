@@ -326,7 +326,6 @@
     width: 100%;
     font-weight: $font-weight-medium;
     text-decoration: none;
-    border-radius: $border-radius-sm;
     border-color: $gray-400;
     color: $body-color;
 
@@ -481,8 +480,6 @@
   }
 
   .dropdown-menu {
-    border-radius: $border-radius-sm;
-
     .dropdown-item {
       padding: 0.25rem 0.75rem;
     }
@@ -572,7 +569,6 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: $border-radius-sm;
   border-color: $dark;
   color: $dark;
 
@@ -701,7 +697,6 @@
 
   .b-form-spinbutton {
     font-weight: $font-weight-medium;
-    border-radius: $border-radius-sm;
 
     & > output {
       padding-left: 0;
@@ -710,8 +705,6 @@
   }
 
   .btn {
-    border-radius: $border-radius-sm;
-
     &.btn-cart {
       display: flex;
       align-items: center;
@@ -888,7 +881,7 @@
   @include media-breakpoint-down(md) {
     .card-rating {
       flex-wrap: wrap;
-  
+
       .rating-caption {
         flex: 0 0 100%;
         margin-top: 0.25rem;

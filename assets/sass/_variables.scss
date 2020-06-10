@@ -132,15 +132,23 @@ $custom-checkbox-indicator-border-radius: 0.125rem !important;
 
 // Buttons
 
+$btn-border-radius: $border-radius-sm;
+$btn-border-radius-sm: $border-radius-sm / 2;
+$btn-border-radius-lg: $border-radius;
+
 $btn-transition: color 0.2s ease-out, background-color 0.2s ease-out,
   border-color 0.2s ease-out, box-shadow 0.2s ease-out;
 
 // Forms
 
 $input-placeholder-color: $gray-500;
+$input-border-radius: $border-radius-sm;
+$input-border-radius-sm: $border-radius-sm / 2;
+$input-border-radius-lg: $border-radius;
 $input-border-color: $gray-400;
 $input-focus-border-color: $gray-500;
 $input-transition: border-color 0.2s ease-out, box-shadow 0.2s ease-out;
+$custom-select-border-radius: $border-radius-sm;
 $custom-forms-transition: background-color 0.2s ease-out,
   border-color 0.2s ease-out, box-shadow 0.2s ease-out;
 $custom-file-text: (
@@ -153,6 +161,10 @@ $custom-file-text: (
 $table-cell-padding: 0.625rem;
 $table-cell-padding-sm: 0.375rem;
 $table-accent-bg: rgba($black, 0.04);
+
+// Dropdown
+
+$dropdown-border-radius: $border-radius-sm;
 
 // Modal
 

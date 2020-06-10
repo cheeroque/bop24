@@ -8,3 +8,15 @@ img.embed-responsive-item {
 .object-fit-cover {
   object-fit: cover !important;
 }
+
+.no-focus-ring {
+  &:focus,
+  &.focus {
+    box-shadow: none !important;
+  }
+}
+
+.scroll-y {
+  overflow-x: hidden;
+  overflow-y: auto;
+}

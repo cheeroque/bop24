@@ -187,7 +187,9 @@ export default {
           const dropdown = event.target.closest('.dropdown-search')
           const link = event.target.closest('.dropdown-search .list-link')
           const backdrop = event.target.closest('.search-backdrop')
-          if ((!dropdown && !input) || link || backdrop) this.closeDropdown()
+          if ((!dropdown && !input) || link || backdrop) {
+            this.releaseFocus()
+          }
         })
       } else {
         document.removeEventListener('click', this.onClickOutside)

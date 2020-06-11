@@ -50,14 +50,16 @@
     .slide-wrapper-container {
       position: relative;
       height: 185px;
+      overflow: hidden;
       z-index: 0;
 
       .slide-img {
         position: absolute;
         top: 0;
-        right: -17%;
+        right: 50%;
         width: auto;
         height: 100%;
+        transform: translateX(50%);
         z-index: -1;
       }
 
@@ -173,6 +175,7 @@
 
         .slide-img {
           right: 0;
+          transform: none;
         }
 
         .slide-content {

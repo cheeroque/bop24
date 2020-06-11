@@ -5,11 +5,16 @@
         <div :style="slide.style" class="slide-wrapper">
           <b-container class="slide-wrapper-container">
             <img
-              :data-srcset="
-                `/images/slides/${slide.img}-sm.jpg 767w, /images/slides/${slide.img}-md.jpg 991w, /images/slides/${slide.img}.jpg`
-              "
+              :data-src="`/images/slides/${slide.img}-sm.jpg`"
+              class="slide-img swiper-lazy d-md-none"
+            />
+            <img
+              :data-src="`/images/slides/${slide.img}-md.jpg`"
+              class="slide-img swiper-lazy d-none d-md-block d-lg-none"
+            />
+            <img
               :data-src="`/images/slides/${slide.img}.jpg`"
-              class="slide-img swiper-lazy"
+              class="slide-img swiper-lazy d-none d-lg-block"
             />
             <div class="slide-content">
               <!-- eslint-disable-next-line vue/no-v-html -->

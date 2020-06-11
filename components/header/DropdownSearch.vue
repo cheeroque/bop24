@@ -1,24 +1,35 @@
 <template>
   <div
     ref="searchWrapper"
-    :class="{ expanded: isFocused }"
+    :class="{ expanded: fullscreen && isFocused }"
     class="dropdown-search-wrapper"
   >
     <b-button
-      v-if="isFocused"
+      v-if="fullscreen"
+      v-show="isFocused"
       variant="link"
-      class="p-2 fill-dark no-focus-ring d-md-none"
-      @click="closeDropdown"
+      class="p-2 fill-gray-500 no-focus-ring d-md-none"
+      @click="releaseFocus"
     >
-      <svg-icon name="catalog-prev" width="14" height="14" />
+      <svg-icon name="search-close" width="14" height="14" />
     </b-button>
     <div class="search-input-wrapper">
       <b-form-input
+        v-if="fullscreen"
+        ref="seachfieldFullscreen"
+        key="seachfield-fullscreen"
         v-model="query"
-        :size="size"
+        size="sm"
         type="search"
         @focus="onFocus"
-        @blur="onFocusOut"
+        @update="toggleDropdown"
+      ></b-form-input>
+      <b-form-input
+        v-else
+        key="seachfield-default"
+        v-model="query"
+        type="search"
+        @update="toggleDropdown"
       ></b-form-input>
       <div v-show="showSuggestion" class="overlay-suggestion">
         <span class="query">
@@ -30,12 +41,13 @@
       </div>
     </div>
     <b-button
-      v-if="isFocused"
+      v-if="fullscreen"
+      v-show="isFocused"
       variant="link"
-      class="p-2 fill-dark no-focus-ring d-md-none"
+      class="p-2 fill-gray-500 no-focus-ring d-md-none"
       @click="clearSearch"
     >
-      <svg-icon name="close" width="14" height="14" />
+      <svg-icon name="search-clear" width="14" height="14" />
     </b-button>
     <transition name="fade">
       <div v-if="showDropdown" class="dropdown-search">
@@ -121,9 +133,9 @@
     </transition>
     <transition name="fade">
       <div
-        v-if="isFocused"
+        v-if="fullscreen && (showDropdown || isFocused)"
         class="search-backdrop"
-        @click="closeDropdown"
+        @click="releaseFocus"
       ></div>
     </transition>
   </div>
@@ -135,71 +147,68 @@ export default {
     size: {
       type: String,
       default: 'md'
+    },
+    fullscreen: {
+      type: Boolean,
+      default() {
+        return false
+      }
     }
   },
   data() {
     return {
       isFocused: false,
+      showDropdown: false,
+      showSuggestion: false,
+      suggestion: null,
       query: null,
       wrapperStyle: {
         top: null,
         right: null,
         bottom: null,
         left: null
-      }
-    }
-  },
-  computed: {
-    showDropdown() {
-      return !!this.query
-    },
-    suggestion() {
-      if (this.query && this.query.length > 0) return 'подсказка'
-      else return false
-    },
-    showSuggestion() {
-      return !!this.query && !!this.suggestion
+      },
+      onClickOutside: null
     }
   },
   methods: {
-    onFocus(e) {
-      console.log(e)
-      /* const wrapper = this.$refs.searchWrapper
-      const box = wrapper.getBoundingClientRect()
-      console.log(box)
-      wrapper.classList.add('expanding')
-      this.wrapperStyle.top = `${box.top}px`
-      this.wrapperStyle.right = `${box.right}px`
-      this.wrapperStyle.left = `${box.left}px`
-      this.$nextTick(() => {
-        wrapper.classList.remove('expanding')
-        wrapper.classList.add('expanded')
-        this.isFocused = true
-      }) */
+    onFocus(event) {
       this.isFocused = true
     },
-    onFocusOut() {
-      /* const wrapper = this.$refs.searchWrapper
-      this.isFocused = false
-      wrapper.classList.add('expanding')
-      this.$nextTick(() => {
-        wrapper.classList.remove('expanding')
-        wrapper.classList.remove('expanded')
-        this.wrapperStyle = {
-          top: null,
-          right: null,
-          bottom: null,
-          left: null
-        }
-      }) */
-      /* this.isFocused = false */
+    toggleDropdown(value) {
+      if (value && value.length > 0) {
+        this.showDropdown = true
+        this.showSuggestion = true
+        this.suggestion = 'одсказка'
+        this.onClickOutside = document.addEventListener('click', (event) => {
+          const input = event.target.closest(
+            '.search-input-wrapper .form-control'
+          )
+          const dropdown = event.target.closest('.dropdown-search')
+          const link = event.target.closest('.dropdown-search .list-link')
+          const backdrop = event.target.closest('.search-backdrop')
+          if ((!dropdown && !input) || link || backdrop) this.closeDropdown()
+        })
+      } else {
+        document.removeEventListener('click', this.onClickOutside)
+        this.closeDropdown()
+      }
     },
     closeDropdown() {
-      this.clearSearch()
-      this.isFocused = false
+      this.showDropdown = false
+      this.query = null
+      this.showSuggestion = false
+      this.suggestion = null
     },
     clearSearch() {
       this.query = null
+      this.showSuggestion = false
+      this.suggestion = null
+      this.$refs.seachfieldFullscreen.$el.focus()
+    },
+    releaseFocus() {
+      this.isFocused = false
+      this.closeDropdown()
     }
   }
 }

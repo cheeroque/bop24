@@ -12,7 +12,7 @@
             </b-navbar-brand>
             <b-navbar-nav class="w-100">
               <li class="flex-fill d-md-none">
-                <dropdown-search size="sm"></dropdown-search>
+                <dropdown-search size="sm" fullscreen></dropdown-search>
               </li>
               <b-nav-item-dropdown no-caret toggle-class="menu-toggle">
                 <template v-slot:button-content>

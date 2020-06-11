@@ -18,6 +18,7 @@
 @import 'home';
 @import 'catalog';
 @import 'cart';
+@import 'account';
 
 @include media-breakpoint-down(sm) {
   .container {

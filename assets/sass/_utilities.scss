@@ -20,3 +20,20 @@ img.embed-responsive-item {
   overflow-x: hidden;
   overflow-y: auto;
 }
+
+@each $color, $value in $theme-colors {
+  .text-#{$color} {
+    .icon {
+      fill: $value;
+      transition: $transition-base;
+    }
+
+    &:hover,
+    &:active,
+    &.active {
+      .icon {
+        fill: darken($value, 15%);
+      }
+    }
+  }
+}

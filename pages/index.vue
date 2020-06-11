@@ -260,6 +260,7 @@ export default {
           title:
             'Макароны без яиц Antico Pastificio “Пенне Дзита Ригате” 500 г',
           price: '162,50',
+          discount: 10,
           rating: 5,
           img: '/images/products/pasta.jpg'
         },

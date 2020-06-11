@@ -27,7 +27,7 @@
           </p>
 
           <b-form class="form-auth">
-            <b-form-row class="mb-4 mb-md-4">
+            <b-form-row class="mb-4">
               <b-col lg="8">
                 <b-form-input
                   type="text"

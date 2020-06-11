@@ -33,7 +33,7 @@
                   </a>
                 </b-dropdown-text>
                 <b-dropdown-text class="d-md-none">
-                  <b-button to="/account" variant="secondary" size="sm">
+                  <b-button to="/account/auth" variant="secondary" size="sm">
                     <svg-icon name="account" width="22" height="20" />
                     <span class="caption">
                       Личный кабинет
@@ -59,7 +59,7 @@
               <li class="flex-fill mr-4 mr-xl-5 d-none d-md-block">
                 <dropdown-search></dropdown-search>
               </li>
-              <b-nav-item to="/account" class="d-none d-md-flex">
+              <b-nav-item to="/account/auth" class="d-none d-md-flex">
                 <svg-icon name="account" width="22" height="20" />
                 <span class="caption">
                   Личный кабинет

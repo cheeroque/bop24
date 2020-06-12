@@ -12,12 +12,25 @@
     </div>
     <div class="container">
       <b-row>
-        <b-col md="6" lg="4" xl="3">
+        <b-col md="6" lg="4" xl="3" class="d-none d-md-block">
           <account-menu></account-menu>
         </b-col>
-        <b-col md="6" lg="8" xl="9" class="d-none d-md-block">
+        <b-col md="6" lg="8" xl="9">
+          <b-button
+            to="/account"
+            variant="link"
+            class="account-backlink d-md-none"
+          >
+            <svg-icon name="arrow-backlink" width="19" height="7" />
+            <span class="caption">
+              Профиль
+            </span>
+          </b-button>
           <b-row no-gutters>
-            <b-col lg="6" class="bg-gray-200 rounded-sm mb-3 mb-lg-5">
+            <b-col
+              lg="6"
+              class="bg-gray-200 rounded-sm mb-3 mb-lg-5 d-none d-md-block"
+            >
               <div class="p-3 py-xl-4">
                 <div class="user-info">
                   <div class="userpic">

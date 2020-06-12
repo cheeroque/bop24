@@ -24,7 +24,7 @@
         <div class="userpic">
           <img src="/images/users/viktoria.jpg" />
         </div>
-        <div class="welcome-wrapper">
+        <div v-if="showWelcome" class="welcome-wrapper">
           <div class="username">
             <span class="caption">
               Виктория К. В.
@@ -84,6 +84,11 @@ export default {
   head: {
     bodyAttrs: {
       class: 'body-account'
+    }
+  },
+  computed: {
+    showWelcome() {
+      return this.$route.name === 'account'
     }
   }
 }

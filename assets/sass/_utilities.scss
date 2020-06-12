@@ -21,6 +21,11 @@ img.embed-responsive-item {
   overflow-y: auto;
 }
 
+.flex-center {
+  align-items: center !important;
+  justify-content: center !important;
+}
+
 @each $color, $value in $theme-colors {
   .text-#{$color} {
     .icon {
@@ -28,9 +33,9 @@ img.embed-responsive-item {
       transition: $transition-base;
     }
 
-    &:hover,
-    &:active,
-    &.active {
+    &:link:hover,
+    &:link:active,
+    &:link.active {
       .icon {
         fill: darken($value, 15%);
       }

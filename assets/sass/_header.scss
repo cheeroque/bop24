@@ -499,6 +499,20 @@ $catalog-width-xs: 300px;
     }
   }
 
+  &.app-header-account {
+    display: block;
+
+    .navbar {
+      padding-top: 0.125rem;
+      padding-bottom: 0.125rem;
+      background-color: $gray-100;
+
+      .icon {
+        fill: $primary;
+      }
+    }
+  }
+
   @include media-breakpoint-up(md) {
     display: flex;
     align-items: center;

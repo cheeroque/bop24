@@ -13,6 +13,10 @@ $img-width-table: 7rem;
     }
   }
 
+  &.card-rounded {
+    border-radius: 1rem;
+  }
+
   &.card-banner {
     border-radius: 0;
     border: none;

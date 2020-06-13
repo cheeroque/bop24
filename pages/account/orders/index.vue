@@ -27,7 +27,7 @@
                 Заказы
               </span>
             </b-button>
-            <b-row cols="9" class="my-4">
+            <b-row cols="9" class="mb-3 my-lg-4">
               <b-col lg="6" xl="4">
                 <b-form-input
                   type="search"

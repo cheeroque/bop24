@@ -358,7 +358,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 0.75rem;
-  padding: 0 0.75rem;
+  padding: 0;
   font-weight: $font-weight-medium;
   color: $body-color;
 
@@ -383,6 +383,7 @@
 
     &:focus {
       text-decoration: none;
+      box-shadow: none;
     }
   }
 }

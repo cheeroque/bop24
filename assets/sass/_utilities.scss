@@ -42,3 +42,13 @@ img.embed-responsive-item {
     }
   }
 }
+
+@each $breakpoint, $width in $grid-breakpoints {
+  @each $color, $value in $theme-colors {
+    @include media-breakpoint-up($breakpoint) {
+      .bg-#{$breakpoint}-#{$color} {
+        background-color: $value !important;
+      }
+    }
+  }
+}

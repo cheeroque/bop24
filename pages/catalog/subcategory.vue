@@ -217,15 +217,7 @@
         <b-row align-v="center" class="mb-4">
           <b-col lg="4" offset-lg="4">
             <div class="text-center">
-              <b-button
-                :class="{ busy: isBusy }"
-                variant="link"
-                class="btn-show-more"
-                @click="showMore"
-              >
-                Показать ещё
-                <svg-icon name="refresh" width="20" height="20" class="ml-2" />
-              </b-button>
+              <btn-show-more></btn-show-more>
             </div>
           </b-col>
           <b-col lg="4" class="d-none d-lg-block">
@@ -258,13 +250,15 @@ import CardProduct from '@/components/cards/CardProduct'
 import CollapseCatalogSidebar from '@/components/catalog/CollapseCatalogSidebar'
 import CollapseCatalogFilter from '@/components/catalog/CollapseCatalogFilter'
 import FilterRange from '@/components/catalog/FilterRange'
+import BtnShowMore from '@/components/core/BtnShowMore'
 
 export default {
   components: {
     CardProduct,
     CollapseCatalogSidebar,
     CollapseCatalogFilter,
-    FilterRange
+    FilterRange,
+    BtnShowMore
   },
   data() {
     return {

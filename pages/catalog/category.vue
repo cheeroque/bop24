@@ -71,15 +71,7 @@
         <b-row align-v="center" class="mb-4">
           <b-col lg="4" offset-lg="4">
             <div class="text-center">
-              <b-button
-                :class="{ busy: isBusy }"
-                variant="link"
-                class="btn-show-more"
-                @click="showMore"
-              >
-                Показать ещё
-                <svg-icon name="refresh" width="20" height="20" class="ml-2" />
-              </b-button>
+              <btn-show-more></btn-show-more>
             </div>
           </b-col>
           <b-col lg="4" class="d-none d-lg-block">
@@ -110,11 +102,13 @@
 <script>
 import CardCatalogSubcategory from '@/components/cards/CardCatalogSubcategory'
 import CollapseCatalogSidebar from '@/components/catalog/CollapseCatalogSidebar'
+import BtnShowMore from '@/components/core/BtnShowMore'
 
 export default {
   components: {
     CardCatalogSubcategory,
-    CollapseCatalogSidebar
+    CollapseCatalogSidebar,
+    BtnShowMore
   },
   data() {
     return {
@@ -123,8 +117,7 @@ export default {
         { text: 'Каталог', href: '/catalog' },
         { text: 'Продукты', to: '/catalog/category', active: true }
       ],
-      currentPage: 1,
-      isBusy: false
+      currentPage: 1
     }
   },
   computed: {
@@ -133,15 +126,6 @@ export default {
     },
     category() {
       return this.$store.state.category
-    }
-  },
-  methods: {
-    showMore() {
-      this.isBusy = true
-      const unsetBusy = setTimeout(() => {
-        this.isBusy = false
-        clearTimeout(unsetBusy)
-      }, 2000)
     }
   }
 }

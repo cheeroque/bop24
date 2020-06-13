@@ -2,6 +2,54 @@
   &[type='submit'] {
     min-width: 10rem;
   }
+
+  &.btn-show-more {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-color: $dark;
+    color: $dark;
+
+    .icon {
+      fill: $dark;
+      transition: $transition-base;
+    }
+
+    &:not(:disabled):not(.disabled) {
+      &.busy,
+      &.busy:hover,
+      &.busy:focus {
+        text-decoration: none;
+        color: $white;
+        border-color: $primary;
+        background-color: $primary;
+        box-shadow: none;
+        opacity: 0.25;
+
+        .icon {
+          fill: $white;
+          animation: spin 2s ease-in-out infinite;
+        }
+      }
+
+      &:not(.busy) {
+        &:hover {
+          text-decoration: none;
+          border-color: $primary;
+          color: $primary;
+
+          .icon {
+            fill: $primary;
+          }
+        }
+
+        &:focus {
+          text-decoration: none;
+          box-shadow: none;
+        }
+      }
+    }
+  }
 }
 
 .backlink {
@@ -53,5 +101,15 @@
     .icon {
       fill: color-yiq($value);
     }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
   }
 }

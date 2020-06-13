@@ -86,6 +86,7 @@
   margin: 0 -0.5rem 0.5rem;
   color: $white;
   background-color: $primary;
+  z-index: 0;
 
   .icon {
     fill: $white;
@@ -206,6 +207,8 @@
   }
 
   @include media-breakpoint-up(lg) {
+    margin-bottom: 3rem;
+
     &::before {
       width: calc(
         (100vw - #{map-get($container-max-widths, 'lg')}) / 2 + 2rem + #{$grid-gutter-width /
@@ -215,6 +218,8 @@
   }
 
   @include media-breakpoint-up(xl) {
+    margin-bottom: 4rem;
+
     &::before {
       width: calc(
         (100vw - #{map-get($container-max-widths, 'xl')}) / 2 + 2rem + #{$grid-gutter-width /

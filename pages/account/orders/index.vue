@@ -27,6 +27,7 @@
                 Заказы
               </span>
             </b-button>
+
             <b-row cols="9" class="mb-3 my-lg-4">
               <b-col lg="6" xl="4">
                 <b-form-input
@@ -44,9 +45,9 @@
             >
               <div class="card-body p-0 p-lg-3">
                 <b-row cols="9" align-v="center">
-                  <b-col lg="5">
-                    <b-row class="mx-n2 mb-3 mb-lg-0">
-                      <b-col cols="6" class="px-2">
+                  <b-col xl="5">
+                    <b-row class="mx-n2 mb-3 mb-xl-0">
+                      <b-col cols="6" md="5" lg="6" class="px-2">
                         <p class="mb-1">
                           Заказ
                           <b-link
@@ -60,7 +61,12 @@
                           от&nbsp;03.12.2020
                         </p>
                       </b-col>
-                      <b-col cols="6" class="text-right text-lg-left px-2">
+                      <b-col
+                        cols="6"
+                        md="7"
+                        lg="6"
+                        class="text-right text-xl-left px-2"
+                      >
                         <p class="mb-1">
                           Сумма:
                           <span class="font-weight-medium"
@@ -76,7 +82,7 @@
                       </b-col>
                     </b-row>
                   </b-col>
-                  <b-col lg="4">
+                  <b-col xl="4">
                     <b-row class="mx-n2">
                       <b-col cols="6" class="px-2">
                         <b-button
@@ -88,7 +94,7 @@
                             name="refresh"
                             width="20"
                             height="20"
-                            class="mr-2 my-n1"
+                            class="mr-2 my-n1 d-md-none d-lg-inline-block"
                           />
                           Повторить заказ
                         </b-button>

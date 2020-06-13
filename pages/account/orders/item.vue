@@ -7,12 +7,12 @@
       ></b-breadcrumb>
 
       <b-row align-v="center" class="mb-4 d-none d-md-flex">
-        <b-col lg="4" xl="3">
+        <b-col md="6" lg="4" xl="3">
           <h2 class="font-size-4 mb-0">
             #личный кабинет
           </h2>
         </b-col>
-        <b-col lg="8" xl="9">
+        <b-col md="6" lg="8" xl="9">
           <b-link to="/account/orders" class="text-dark text-decoration-none">
             <svg-icon name="arrow-backlink" width="19" height="7" />
             <span class="ml-2">

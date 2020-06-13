@@ -93,8 +93,8 @@
                       <b-button
                         variant="primary"
                         class="btn-cart"
-                        @click="addToCart"
                         block
+                        @click="addToCart"
                       >
                         <svg-icon
                           name="cart"

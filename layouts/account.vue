@@ -81,14 +81,14 @@ export default {
     AppHeader,
     AppFooter
   },
-  head: {
-    bodyAttrs: {
-      class: 'body-account'
-    }
-  },
   computed: {
     showWelcome() {
       return this.$route.name === 'account'
+    }
+  },
+  head: {
+    bodyAttrs: {
+      class: 'body-account'
     }
   }
 }

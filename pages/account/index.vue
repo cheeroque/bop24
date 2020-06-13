@@ -91,11 +91,12 @@
             </b-col>
             <b-col cols="6" lg="5" class="text-right text-lg-left px-1">
               <span class="d-inline-block mr-lg-1">
-                Сумма: <strong>6&nbsp;897&nbsp;р.</strong>
+                Сумма:
+                <span class="font-weight-medium">6&nbsp;897&nbsp;р.</span>
               </span>
               <span class="d-inline-block ml-1 ml-lg-0">
                 Баллов за&nbsp;покупку:
-                <strong class="text-primary">897</strong>
+                <span class="font-weight-medium text-primary">897</span>
               </span>
             </b-col>
             <b-col lg="3" class="text-right d-none d-lg-block px-1">

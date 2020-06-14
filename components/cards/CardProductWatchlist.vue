@@ -46,12 +46,12 @@
             </p>
           </div>
           <span
+            :class="item.inStock ? 'text-success' : 'text-gray-400'"
             v-text="
               item.inStock
                 ? 'Товар на\xA0складе'
                 : 'Товар еще не\xA0появился на\xA0складе'
             "
-            :class="item.inStock ? 'text-success' : 'text-gray-400'"
           ></span>
         </div>
       </b-col>

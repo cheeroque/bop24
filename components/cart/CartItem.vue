@@ -6,7 +6,9 @@
     <div class="cart-item-body">
       <div class="cart-item-content">
         <p class="font-weight-medium mb-2">
-          {{ item.title }}
+          <b-link to="/catalog/item" class="text-reset text-decoration-none">
+            {{ item.title }}
+          </b-link>
         </p>
         <p class="text-gray-500 mb-0 d-none d-lg-block">
           {{ item.vendorCode }}

@@ -88,6 +88,43 @@
     }
   }
 
+  .form-transparent {
+    .form-control {
+      color: $white;
+      border-color: $white;
+      background-color: transparent;
+
+      &::placeholder {
+        color: rgba($white, 0.5);
+      }
+    }
+
+    .custom-control {
+      .custom-control-label {
+        &::before {
+          border-color: $white;
+          background-color: transparent;
+        }
+      }
+    }
+
+    .custom-file {
+      &.custom-file-icon {
+        .custom-file-label {
+          background-color: transparent;
+          box-shadow: none;
+
+          &::after {
+            border-radius: $rounded-pill;
+            border: 1px solid $white;
+            background-image: url('../images/icons/attach-white.svg');
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
   @include media-breakpoint-up(md) {
     margin-top: 0;
     padding-top: 2rem;
@@ -183,5 +220,9 @@
     .about-benefits {
       margin-top: 8rem;
     }
+  }
+
+  &.page-about-career {
+    line-height: 1.5;
   }
 }

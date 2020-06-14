@@ -103,7 +103,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="/vacancies" class="footer-link-item">
+                      <a href="/career" class="footer-link-item">
                         Вакансии
                       </a>
                     </li>

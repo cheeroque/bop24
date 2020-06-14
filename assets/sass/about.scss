@@ -224,5 +224,13 @@
 
   &.page-about-career {
     line-height: 1.5;
+
+    @include media-breakpoint-up(lg) {
+      h1,
+      .h1 {
+        margin-bottom: 4rem;
+        font-size: 4rem;
+      }
+    }
   }
 }

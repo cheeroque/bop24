@@ -53,11 +53,18 @@ export default {
           ]
         },
         {
+          title: 'Мой бонусный счет',
+          icon: 'account/star',
+          items: [
+            { title: 'Персональные предложения', link: '/account/suggestions' }
+          ]
+        },
+        {
           title: 'Настройки',
           icon: 'account/settings',
           items: [
             { title: 'Информация об\xA0аккаунте', link: '/account/settings' },
-            { title: 'Настройки общения', link: '/account/settings/chat' },
+            { title: 'Настройки общения', link: '/account/notifications' },
             { title: 'Лист ожидания', link: '/account/watchlist' }
           ]
         }

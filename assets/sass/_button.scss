@@ -84,6 +84,7 @@
   .btn-outline-#{$color} {
     .icon {
       fill: $value;
+      transition: $transition-base;
     }
 
     &:hover,

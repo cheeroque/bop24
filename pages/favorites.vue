@@ -73,6 +73,15 @@ export default {
         img: '/images/products/pasta.jpg'
       }
     }
+  },
+  methods: {
+    setSort(sort) {
+      if (this.activeSort === sort) this.sortDesc = !this.sortDesc
+      else {
+        this.activeSort = sort
+        this.sortDesc = false
+      }
+    }
   }
 }
 </script>

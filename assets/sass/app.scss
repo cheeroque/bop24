@@ -19,6 +19,7 @@
 @import 'catalog';
 @import 'cart';
 @import 'account';
+@import 'contacts';
 
 @include media-breakpoint-down(sm) {
   .container {

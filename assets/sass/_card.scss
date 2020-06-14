@@ -462,7 +462,7 @@ $img-width-table: 7rem;
       content: '';
       padding-bottom: 63%;
     }
-    
+
     .card-content {
       position: absolute;
       left: 0;
@@ -554,6 +554,16 @@ $img-width-table: 7rem;
           margin: 0 auto;
           text-align: center;
         }
+      }
+    }
+  }
+
+  &.card-address {
+    @include media-breakpoint-up(lg) {
+      min-height: 10rem;
+
+      .card-body {
+        padding: 1.5rem;
       }
     }
   }

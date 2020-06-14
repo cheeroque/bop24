@@ -47,8 +47,8 @@ export default {
             { title: 'Профиль', link: '/account/profile' },
             { title: 'Заказы', link: '/account/orders' },
             { title: 'Кредитные карты', link: '/account/cards' },
-            { title: 'Адрес', link: '/account/address' },
-            { title: 'Любимые товары', link: '/account/liked' },
+            { title: 'Адреса', link: '/account/address' },
+            { title: 'Любимые товары', link: '/account/likes' },
             { title: 'Избранное', link: '/account/favorites' }
           ]
         },

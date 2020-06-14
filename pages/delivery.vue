@@ -123,7 +123,7 @@
       </p>
 
       <b-row class="mb-3">
-        <b-col md="9" lg="7" xl="5">
+        <b-col md="9" lg="7" xl="6">
           <div class="d-flex">
             <b-form-input
               type="text"

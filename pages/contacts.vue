@@ -53,7 +53,7 @@
         </b-button>
       </b-col>
       <b-col md="6" class="mb-4">
-        <div class="contacts-map-wrapper">
+        <div class="map-wrapper">
           <iframe
             src="https://yandex.ru/map-widget/v1/-/CCr5j1b"
             width="100%"

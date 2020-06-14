@@ -543,7 +543,7 @@ export default {
       count: 1,
       inFav: false,
       swiperOptions: {
-        loop: true,
+        loop: false,
         grabCursor: true,
         preloadImages: false,
         lazy: true,

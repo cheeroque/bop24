@@ -14,6 +14,7 @@
           variant="link"
           class="dropdown-catalog-sort"
           no-caret
+          right
         >
           <template v-slot:button-content>
             <span class="caption">

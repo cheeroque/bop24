@@ -559,7 +559,7 @@ export default {
         spaceBetween: 16
       },
       gallery: ['product', 'product1', 'product2', 'product3'],
-      tabIndex: 2,
+      tabIndex: 0,
       tabs: {
         specs: [
           { title: 'Бренд', val: 'Pastificio' },

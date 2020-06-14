@@ -21,16 +21,16 @@
         </b-navbar-nav>
       </nav>
       <div class="user-info">
-        <div class="userpic">
+        <b-link to="/account/settings" class="userpic">
           <img src="/images/users/viktoria.jpg" />
-        </div>
+        </b-link>
         <div v-if="showWelcome" class="welcome-wrapper">
           <div class="username">
             <span class="caption">
               Виктория К. В.
             </span>
           </div>
-          <b-button variant="link" class="btn-edit">
+          <b-button to="/account/settings" variant="link" class="btn-edit">
             <svg-icon name="edit" width="14" height="14" />
             <span class="caption">
               Редактировать

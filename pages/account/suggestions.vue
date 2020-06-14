@@ -139,30 +139,18 @@ export default {
       breadcrumbs: [
         { text: 'Главная', href: '/' },
         { text: 'Личный кабинет', to: '/account' },
-        { text: 'Любимые товары', to: '/account/likes', active: true }
+        {
+          text: 'Персональные предложения',
+          to: '/account/suggestions',
+          active: true
+        }
       ],
-      activeSort: { value: 'recommended', text: 'Мы рекомендуем' },
-      sortOptions: [
-        { value: 'price', text: 'Цена' },
-        { value: 'popularity', text: 'Популярность' },
-        { value: 'recommended', text: 'Мы рекомендуем' }
-      ],
-      sortDesc: false,
       item: {
         title: 'Макароны без яиц Antico Pastificio “Пенне Дзита Ригате” 500 г',
         price: '162,50',
         rating: 5,
         img: '/images/products/pasta.jpg',
         discount: 50
-      }
-    }
-  },
-  methods: {
-    setSort(sort) {
-      if (this.activeSort === sort) this.sortDesc = !this.sortDesc
-      else {
-        this.activeSort = sort
-        this.sortDesc = false
       }
     }
   }

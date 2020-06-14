@@ -280,9 +280,7 @@
                 key="delivery-self-map"
               >
                 <b-col md="7" lg="6" class="d-none d-md-block mb-4 mb-xl-5">
-                  <div class="embed-responsive embed-responsive-2by1">
-                    <div class="embed-responsive-item bg-light"></div>
-                  </div>
+                  <div class="map-wrapper"></div>
                 </b-col>
                 <b-col md="5" lg="4" xl="3" class="mb-4 mb-xl-5">
                   <div class="card card-white">

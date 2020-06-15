@@ -368,6 +368,7 @@
       width: 2rem;
       height: 2rem;
       margin: 0;
+      outline: none;
       transform: translateY(-50%);
 
       &.swiper-button-prev {
@@ -413,7 +414,7 @@
           background-image: linear-gradient(
             to right,
             $white calc(100% - 2rem),
-            transparent
+            rgba($white, 0)
           );
 
           &::after {

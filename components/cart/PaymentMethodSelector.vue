@@ -33,7 +33,7 @@
         </b-form-radio>
       </div>
     </b-form-radio-group>
-    <b-button type="submit" variant="primary">
+    <b-button to="/cart/confirmation" variant="primary">
       Перейти к&nbsp;оплате
     </b-button>
   </div>

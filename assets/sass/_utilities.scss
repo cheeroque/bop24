@@ -38,8 +38,11 @@ img.embed-responsive-item {
     }
 
     &:link:hover,
+    &.btn-link:hover,
     &:link:active,
-    &:link.active {
+    &.btn-link:active,
+    &:link.active,
+    &.btn-link.active {
       .icon {
         fill: darken($value, 15%);
       }

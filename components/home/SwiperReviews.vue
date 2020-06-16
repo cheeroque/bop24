@@ -8,7 +8,8 @@
         <swiper ref="swiperReviews" :options="swiperOptions">
           <swiper-slide v-for="(slide, index) in items" :key="`slide-${index}`">
             <div class="card card-review">
-              <img :src="slide.img" class="card-img" />
+              <img v-if="slide.img" :src="slide.img" class="card-img" />
+              <div v-else class="card-img">ВК</div>
               <div class="card-body">
                 <div class="card-rating">
                   <svg-icon

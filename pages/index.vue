@@ -296,7 +296,6 @@ export default {
         {
           author: 'Елена Фахеева',
           rating: 5,
-          img: '/images/users/user.jpg',
           content: 'Прекрасный магазин. Все быстро привезли.'
         },
         {

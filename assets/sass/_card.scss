@@ -343,11 +343,17 @@ $img-width-table: 7rem;
     border: none;
 
     .card-img {
+      display: flex;
       align-self: flex-start;
+      align-items: center;
+      justify-content: center;
       width: 4rem;
       height: 4rem;
       margin-top: 0.25rem;
-      border-radius: 99rem;
+      font-size: $font-size-4;
+      border-radius: $rounded-pill;
+      color: $primary;
+      background-color: $gray-300;
       object-fit: cover;
     }
 

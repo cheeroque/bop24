@@ -170,6 +170,7 @@ $catalog-width-xs: 300px;
         padding: 0.25rem 1rem;
         border: none;
         background-color: transparent;
+        outline: none;
       }
     }
   }
@@ -207,11 +208,13 @@ $catalog-width-xs: 300px;
         display: flex;
         align-items: center;
         flex: 1 1 0;
+        max-width: 100%;
         padding: 0.75rem 1.75rem;
         white-space: nowrap;
         border: none;
         color: $body-color;
         background-color: transparent;
+        overflow: hidden;
 
         &:hover {
           font-weight: $font-weight-medium;
@@ -292,6 +295,12 @@ $catalog-width-xs: 300px;
         left: $catalog-width-xs;
         width: $catalog-width-xs;
         height: auto;
+
+        .catalog-item:not(.catalog-item-all) {
+          .catalog-link {
+            font-weight: $font-weight-normal;
+          }
+        }
       }
 
       &.catalog-level-2 {
@@ -326,7 +335,7 @@ $catalog-width-xs: 300px;
 
     @include media-breakpoint-up(lg) {
       left: calc(-92px - 0.25rem);
-      top: calc(100% + 1px);
+      top: calc(100% + 2px);
       width: map-get($container-max-widths, 'lg');
       height: auto;
       max-height: calc(100vh - #{$header-height-lg} - 1rem);
@@ -343,6 +352,8 @@ $catalog-width-xs: 300px;
 
       .catalog-item {
         border-bottom: none;
+        max-width: 100%;
+        overflow: hidden;
 
         .catalog-link {
           padding: 0.625rem 1rem;
@@ -382,8 +393,10 @@ $catalog-width-xs: 300px;
         padding-bottom: 1rem;
 
         &.catalog-level-0 {
-          width: 250px;
-          flex: 0 0 250px;
+          width: auto;
+          min-width: 250px;
+          max-width: 34%;
+          flex: 0 1 auto;
           border-right: 1px solid $gray-100;
 
           .catalog-item {
@@ -395,8 +408,10 @@ $catalog-width-xs: 300px;
 
         &.catalog-level-1 {
           position: static;
-          width: 250px;
-          flex: 0 0 250px;
+          width: auto;
+          min-width: 250px;
+          max-width: 33%;
+          flex: 0 1 auto;
           margin-left: 1rem;
           border-right: 1px solid $gray-100;
         }
@@ -404,6 +419,9 @@ $catalog-width-xs: 300px;
         &.catalog-level-2 {
           position: static;
           width: auto;
+          min-width: 250px;
+          max-width: 33%;
+          flex: 0 1 auto;
           margin-left: 1rem;
 
           .catalog-item {

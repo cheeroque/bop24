@@ -55,7 +55,7 @@
                 class="row mx-n2"
               >
                 <b-col lg="4" class="mb-3 mb-lg-0 px-2">
-                  <b-link
+                  <a
                     href="#"
                     class="card card-white text-reset text-decoration-none h-100"
                     @click="setDeliveryMethod('self')"
@@ -76,10 +76,10 @@
                         с&nbsp;22.05.2020
                       </p>
                     </div>
-                  </b-link>
+                  </a>
                 </b-col>
                 <b-col lg="4" class="mb-3 mb-lg-0 px-2">
-                  <b-link
+                  <a
                     href="#"
                     class="card card-white text-reset text-decoration-none h-100"
                     @click="setDeliveryMethod('courier')"
@@ -92,14 +92,17 @@
                       <p class="text-primary mt-auto">
                         Бесплатно
                       </p>
-                      <p class="mb-0">
+                      <p>
                         с&nbsp;23.05.2020
                       </p>
+                      <b-form-checkbox v-model="distanceDelivery" size="sm">
+                        Бесконтактная доставка
+                      </b-form-checkbox>
                     </div>
-                  </b-link>
+                  </a>
                 </b-col>
                 <b-col lg="4" class="mb-3 mb-lg-0 px-2">
-                  <b-link
+                  <a
                     href="#"
                     class="card card-white text-reset text-decoration-none h-100"
                     @click="setDeliveryMethod('post')"
@@ -120,7 +123,7 @@
                         с&nbsp;23.05.2020
                       </p>
                     </div>
-                  </b-link>
+                  </a>
                 </b-col>
               </b-form-radio-group>
             </div>
@@ -769,7 +772,8 @@ export default {
       selfDeliveryMode: 'map',
       paymentMethod: 'online',
       paymentMethodLegal: 'transfer',
-      companyInfo: null
+      companyInfo: null,
+      distanceDelivery: false
     }
   },
   mounted() {

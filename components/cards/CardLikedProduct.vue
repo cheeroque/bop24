@@ -41,7 +41,6 @@
         </div>
       </transition>
       <b-dropdown
-        v-model="showDropdown"
         variant="link"
         class="dropdown-liked-rating mr-2 ml-auto"
         toggle-class="p-0"

@@ -153,9 +153,38 @@
               <p class="text-gray-600">
                 Или поделитесь этой ссылкой
               </p>
-              <span class="share-link mb-4">
-                https://www.figma.com/file/K0A6guKr7SvSw0eiSNVcHD/bop?
-              </span>
+              <div class="dropdown dropright dropdown-share-link mb-4">
+                <span
+                  class="dropdown-toggle dropdown-toggle-no-caret"
+                  @mouseenter="toggleHint"
+                  @click="copyLink"
+                >
+                  https://www.figma.com/file/K0A6guKr7SvSw0eiSNVcHD/bop?
+                </span>
+                <transition name="fade">
+                  <ul
+                    v-show="showLinkHint"
+                    ref="hintDropdownMenu"
+                    :class="{ show: showLinkHint }"
+                    class="dropdown-menu"
+                  >
+                    <li
+                      :class="{ 'text-success': linkCopied }"
+                      class="dropdown-item"
+                      @click="copyLink"
+                    >
+                      <svg-icon name="copy" width="17" height="19" />
+                      <span
+                        v-text="
+                          linkCopied
+                            ? 'Ссылка скопирована!'
+                            : 'Скопировать ссылку'
+                        "
+                      ></span>
+                    </li>
+                  </ul>
+                </transition>
+              </div>
             </div>
             <div class="card-footer d-flex bg-transparent border-0 pt-0 pb-4">
               <dropdown-share></dropdown-share>
@@ -246,7 +275,35 @@ export default {
           rating: 5,
           img: '/images/products/pasta.jpg'
         }
-      ]
+      ],
+      showLinkHint: false,
+      linkCopied: false
+    }
+  },
+  methods: {
+    toggleHint(event) {
+      this.showLinkHint = true
+
+      let hideHint
+      const target = event.target
+
+      target.addEventListener('mouseleave', () => {
+        hideHint = setTimeout(() => {
+          this.showLinkHint = false
+        }, 300)
+      })
+
+      this.$refs.hintDropdownMenu.addEventListener('mouseenter', () => {
+        clearTimeout(hideHint)
+      })
+
+      document.addEventListener('click', (event) => {
+        const dropdown = event.target.closest('.dropdown-share-link')
+        if (!dropdown) this.showLinkHint = false
+      })
+    },
+    copyLink() {
+      this.linkCopied = true
     }
   }
 }

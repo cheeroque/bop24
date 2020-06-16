@@ -124,19 +124,3 @@ a:not(.card).text-black.text-decoration-none {
     }
   }
 }
-
-.share-link {
-  display: inline-block;
-  padding: $input-btn-padding-y $input-btn-padding-x;
-  line-height: $input-btn-line-height;
-  border-radius: $border-radius-sm;
-  color: $primary;
-  background-color: rgba($primary, 0.2);
-  transition: $transition-base;
-  cursor: pointer;
-
-  &:hover {
-    text-decoration: none;
-    background-color: rgba($primary, 0.3);
-  }
-}

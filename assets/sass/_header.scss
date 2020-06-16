@@ -291,7 +291,7 @@ $catalog-width-xs: 300px;
         top: 0;
         left: $catalog-width-xs;
         width: $catalog-width-xs;
-        height: 100%;
+        height: auto;
       }
 
       &.catalog-level-2 {

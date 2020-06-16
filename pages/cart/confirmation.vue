@@ -158,12 +158,7 @@
               </span>
             </div>
             <div class="card-footer d-flex bg-transparent border-0 pt-0 pb-4">
-              <b-button variant="outline-dark" class="btn-share">
-                <span class="caption">
-                  Поделиться
-                </span>
-                <svg-icon name="share" width="17" height="9" />
-              </b-button>
+              <dropdown-share></dropdown-share>
               <b-button variant="outline-primary" class="ml-auto">
                 Подробнее
               </b-button>
@@ -207,9 +202,12 @@
 
 <script>
 import SwiperProducts from '@/components/home/SwiperProducts'
+import DropdownShare from '@/components/core/DropdownShare'
+
 export default {
   components: {
-    SwiperProducts
+    SwiperProducts,
+    DropdownShare
   },
   data() {
     return {

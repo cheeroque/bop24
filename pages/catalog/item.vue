@@ -182,12 +182,7 @@
                     22&nbsp;мая
                   </p>
                 </div>
-                <b-button variant="outline-dark" class="btn-share">
-                  <span class="caption">
-                    Поделиться
-                  </span>
-                  <svg-icon name="share" width="17" height="9" />
-                </b-button>
+                <dropdown-share class="mx-auto mt-auto"></dropdown-share>
               </b-col>
               <b-col lg="6" class="mb-3 mb-lg-0 d-none d-lg-block">
                 <div class="card card-white card-catalog-item-controls">
@@ -260,12 +255,7 @@
                     <p class="bonus-info">
                       15&nbsp;баллов за&nbsp;покупку
                     </p>
-                    <b-button variant="outline-dark" class="btn-share">
-                      <span class="caption">
-                        Поделиться
-                      </span>
-                      <svg-icon name="share" width="17" height="9" />
-                    </b-button>
+                    <dropdown-share class="mx-auto mt-auto"></dropdown-share>
                   </div>
                 </div>
               </b-col>
@@ -521,6 +511,7 @@ import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 import ReviewFilterByRating from '@/components/catalog/ReviewFilterByRating'
 import ReviewItem from '@/components/catalog/ReviewItem'
 import SwiperProducts from '@/components/home/SwiperProducts'
+import DropdownShare from '@/components/core/DropdownShare'
 import 'swiper/css/swiper.css'
 
 export default {
@@ -529,7 +520,8 @@ export default {
     SwiperSlide,
     ReviewFilterByRating,
     ReviewItem,
-    SwiperProducts
+    SwiperProducts,
+    DropdownShare
   },
   data() {
     return {

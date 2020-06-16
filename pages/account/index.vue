@@ -21,7 +21,7 @@
               <div class="p-3 py-xl-4">
                 <div class="user-info">
                   <div class="userpic">
-                    <img src="/images/users/viktoria.jpg" />
+                    ВК
                   </div>
                   <div class="welcome-wrapper">
                     <div class="username">

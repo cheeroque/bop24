@@ -180,6 +180,12 @@ $img-width-table: 7rem;
 
     .card-img-wrapper {
       padding: 0.5rem;
+
+      .embed-responsive {
+        .embed-responsive-item {
+          padding-top: 1.5rem;
+        }
+      }
     }
 
     .card-img {
@@ -571,6 +577,14 @@ $img-width-table: 7rem;
   &.card-liked-product {
     padding-top: 2rem;
 
+    .card-img-wrapper {
+      .embed-responsive {
+        .embed-responsive-item {
+          padding-top: 0;
+        }
+      }
+    }
+
     @include media-breakpoint-down(md) {
       padding-left: 5rem;
 
@@ -654,6 +668,7 @@ $img-width-table: 7rem;
             align-items: center;
             justify-content: center;
             height: 100%;
+            padding-top: 0;
           }
 
           &::before {
@@ -763,6 +778,7 @@ $img-width-table: 7rem;
               align-items: center;
               justify-content: center;
               height: 100%;
+              padding-top: 0;
             }
 
             &::before {

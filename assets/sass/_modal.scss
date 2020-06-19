@@ -20,3 +20,35 @@
     padding-bottom: 2rem;
   }
 }
+
+.modal-gallery {
+  .modal-content {
+    padding: 0;
+    border-radius: 0;
+    border: none;
+    background-color: transparent;
+  }
+
+  .modal-body {
+    padding: 0;
+  }
+
+  .close {
+    position: absolute;
+    top: 0.5rem;
+    right: calc(#{$grid-gutter-width / 2} + 0.5rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem;
+    line-height: 0;
+    border-radius: $rounded-pill;
+    border: 1px solid transparent;
+    transition: $transition-base;
+    z-index: 1;
+
+    &:hover {
+      border-color: $body-color;
+    }
+  }
+}

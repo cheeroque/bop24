@@ -53,12 +53,16 @@
                     v-for="(slide, index) in gallery"
                     :key="`slide-${index}`"
                   >
-                    <div class="embed-responsive embed-responsive-5by4">
+                    <b-link
+                      href="#"
+                      class="embed-responsive embed-responsive-5by4 link-lightbox"
+                      @click="showImgModal"
+                    >
                       <img
                         :src="`/images/catalog/${slide}.jpg`"
                         class="embed-responsive-item"
                       />
-                    </div>
+                    </b-link>
                   </swiper-slide>
                   <div
                     slot="pagination"
@@ -503,6 +507,7 @@
         </div>
       </template>
     </b-sidebar>
+    <modal-gallery :items="gallery"></modal-gallery>
   </main>
 </template>
 
@@ -512,6 +517,7 @@ import ReviewFilterByRating from '@/components/catalog/ReviewFilterByRating'
 import ReviewItem from '@/components/catalog/ReviewItem'
 import SwiperProducts from '@/components/home/SwiperProducts'
 import DropdownShare from '@/components/core/DropdownShare'
+import ModalGallery from '@/components/modals/ModalGallery'
 import 'swiper/css/swiper.css'
 
 export default {
@@ -521,7 +527,8 @@ export default {
     ReviewFilterByRating,
     ReviewItem,
     SwiperProducts,
-    DropdownShare
+    DropdownShare,
+    ModalGallery
   },
   data() {
     return {
@@ -631,6 +638,9 @@ export default {
     },
     toggleInfo() {
       this.showSidebar = !this.showSidebar
+    },
+    showImgModal() {
+      this.$bvModal.show('modalGallery')
     }
   }
 }

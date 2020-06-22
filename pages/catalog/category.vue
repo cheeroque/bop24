@@ -17,12 +17,24 @@
                 :key="`item-${C}-${I}`"
                 :class="I === cat.items.length - 1 ? null : 'mb-3'"
               >
-                <b-link to="/subcategory" class="font-weight-medium text-reset">
+                <b-link
+                  to="/catalog/subcategory"
+                  class="font-weight-medium text-reset"
+                >
                   {{ item.title }}
                 </b-link>
               </li>
             </ul>
           </collapse-catalog-sidebar>
+          <div class="collapse-catalog-sidebar">
+            <b-button
+              to="/catalog/subcategory"
+              variant="link"
+              class="collapse-toggle"
+            >
+              #раздел без подразделов
+            </b-button>
+          </div>
         </div>
       </b-col>
       <b-col md="6" lg="8" xl="9" class="overflow-hidden">

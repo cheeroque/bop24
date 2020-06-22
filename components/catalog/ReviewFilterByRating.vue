@@ -25,7 +25,7 @@
           height="14"
           class="icon-rating"
         />
-        <span class="rating-caption"> {{ stars }}&nbsp;отзывов </span>
+        <a href="#" class="rating-caption"> {{ stars }}&nbsp;отзывов </a>
       </div>
     </div>
     <div v-if="link" class="card-footer">

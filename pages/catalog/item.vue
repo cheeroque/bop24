@@ -343,7 +343,8 @@
                       <b-col cols="6" lg="8" xl="7">
                         <div class="reviews-summary">
                           <p class="reviews-count">
-                            <a href="#" class="text-underline">23</a
+                            <b-link to="/catalog/reviews" class="text-underline"
+                              >23</b-link
                             >&nbsp;отзыва о&nbsp;товаре
                           </p>
                           <div class="card-rating">
@@ -370,27 +371,31 @@
                         </div>
                       </b-col>
                       <b-col cols="6" lg="4" xl="3" class="align-self-start">
-                        <b-button variant="outline-primary" block>
+                        <b-button
+                          variant="outline-primary"
+                          block
+                          @click="addReview"
+                        >
                           Оставить отзыв
                         </b-button>
                       </b-col>
                     </b-row>
                     <div class="d-md-none mb-3">
                       <review-filter-by-rating
-                        link="/reviews"
+                        link="/catalog/reviews"
                         :count="reviewStars"
                       ></review-filter-by-rating>
                     </div>
                     <review-item
-                      v-for="i in 3"
-                      :key="`review-${i}`"
-                      :item="tabs.reviews[0]"
+                      v-for="(review, R) in tabs.reviews"
+                      :key="`review-${R}`"
+                      :item="review"
                     >
                     </review-item>
                   </b-col>
                   <b-col md="5" lg="4" xl="3" class="d-none d-md-block">
                     <review-filter-by-rating
-                      link="/reviews"
+                      link="/catalog/reviews"
                       :count="reviewStars"
                     ></review-filter-by-rating>
                   </b-col>
@@ -508,6 +513,7 @@
       </template>
     </b-sidebar>
     <modal-gallery :items="gallery"></modal-gallery>
+    <modal-review></modal-review>
   </main>
 </template>
 
@@ -518,6 +524,7 @@ import ReviewItem from '@/components/catalog/ReviewItem'
 import SwiperProducts from '@/components/home/SwiperProducts'
 import DropdownShare from '@/components/core/DropdownShare'
 import ModalGallery from '@/components/modals/ModalGallery'
+import ModalReview from '@/components/modals/ModalReview'
 import 'swiper/css/swiper.css'
 
 export default {
@@ -528,7 +535,8 @@ export default {
     ReviewItem,
     SwiperProducts,
     DropdownShare,
-    ModalGallery
+    ModalGallery,
+    ModalReview
   },
   data() {
     return {
@@ -590,6 +598,42 @@ export default {
               comment:
                 'Наша подборка включает питательные увлажняющие кремы, пенки для\xA0умывания, омолаживающие сыворотки, а\xA0также волшебный культовый эликсир красоты, изготовленный из\xA0100%\xA0натуральных ингредиентов.'
             }
+          },
+          {
+            author: {
+              name: 'Павел А.',
+              img: 'pavel-a'
+            },
+            date: '12.10.2020',
+            rating: 5,
+            content: {
+              pros:
+                'Основанный в\xA0Бордо в\xA01995\xA0году бренд Caudalie перерабатывает виноградные косточки, которые обычно нерационально выбрасываются во\xA0время сбора урожая, и\xA0получает ценнейшее масло, на\xA0основе которого затем создает свои эффективные инновационные косметические средства.',
+              cons: 'Нет.',
+              comment:
+                'Наша подборка включает питательные увлажняющие кремы, пенки для\xA0умывания, омолаживающие сыворотки, а\xA0также волшебный культовый эликсир красоты, изготовленный из\xA0100%\xA0натуральных ингредиентов.'
+            },
+            comments: [
+              {
+                author: { name: 'Петр П.', img: 'petr-p' },
+                content:
+                  'Наша подборка включает питательные увлажняющие кремы, пенки для\xA0умывания, омолаживающие сыворотки, а\xA0также волшебный культовый эликсир красоты, изготовленный из\xA0100%\xA0натуральных ингредиентов.'
+              }
+            ]
+          },
+          {
+            author: {
+              name: 'Павел А.'
+            },
+            date: '12.10.2020',
+            rating: 4,
+            content: {
+              pros:
+                'Основанный в\xA0Бордо в\xA01995\xA0году бренд Caudalie перерабатывает виноградные косточки, которые обычно нерационально выбрасываются во\xA0время сбора урожая, и\xA0получает ценнейшее масло, на\xA0основе которого затем создает свои эффективные инновационные косметические средства.',
+              cons: 'Нет.',
+              comment:
+                'Наша подборка включает питательные увлажняющие кремы, пенки для\xA0умывания, омолаживающие сыворотки, а\xA0также волшебный культовый эликсир красоты, изготовленный из\xA0100%\xA0натуральных ингредиентов.'
+            }
           }
         ]
       },
@@ -641,6 +685,9 @@ export default {
     },
     showImgModal() {
       this.$bvModal.show('modalGallery')
+    },
+    addReview() {
+      this.$bvModal.show('modalReview')
     }
   }
 }

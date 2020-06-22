@@ -29,4 +29,38 @@
       }
     }
   }
+
+  &.card-rating {
+    justify-content: flex-start;
+
+    .btn {
+      flex: 0 0 auto;
+      padding: 0;
+      line-height: 0;
+      border-radius: 0;
+      border: 0;
+
+      &:not(:disabled):not(.disabled) {
+        &:hover {
+          .icon-rating {
+            fill: $gray-400;
+
+            &.icon-rating-full {
+              fill: darken($orange, 15%);
+            }
+          }
+        }
+
+        &:focus,
+        &:active,
+        &.active {
+          box-shadow: none;
+        }
+      }
+
+      & + .btn {
+        margin-left: 0.5rem;
+      }
+    }
+  }
 }

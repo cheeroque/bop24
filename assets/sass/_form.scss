@@ -413,6 +413,33 @@
 }
 
 .custom-file {
+  .custom-file-label {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-end;
+    padding-left: 0;
+    font-size: $font-size-1;
+    border: none;
+    color: $gray-700;
+    background-color: transparent;
+
+    &::after {
+      position: static;
+      margin-right: 1rem;
+      font-size: $font-size-base;
+      border: 1px solid $primary;
+      color: $primary;
+      background-color: $white;
+      transition: $btn-transition;
+    }
+  }
+
+  .custom-file-input:focus ~ .custom-file-label {
+    background-color: $gray-50;
+    box-shadow: none;
+  }
+
   &.custom-file-icon {
     width: 2.25rem;
     height: 2.25rem;

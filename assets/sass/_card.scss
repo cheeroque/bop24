@@ -858,6 +858,7 @@ $img-width-table: 7rem;
 
   .icon-rating {
     fill: $gray-300;
+    transition: $transition-base;
 
     &.icon-rating-full {
       fill: $orange;

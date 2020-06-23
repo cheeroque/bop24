@@ -221,13 +221,11 @@
             </div>
           </b-col>
           <b-col lg="4" class="d-none d-lg-block">
-            <b-pagination
+            <b-pagination-nav
               v-model="currentPage"
-              total-rows="100"
-              per-page="12"
+              :number-of-pages="10"
               align="end"
               hide-goto-end-buttons
-              class="mb-0"
               prev-class="page-item-prev"
               next-class="page-item-next"
             >
@@ -237,7 +235,7 @@
               <template v-slot:next-text>
                 <svg-icon name="page-next" width="14" height="14" />
               </template>
-            </b-pagination>
+            </b-pagination-nav>
           </b-col>
         </b-row>
       </b-col>

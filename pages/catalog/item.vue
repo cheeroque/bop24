@@ -297,20 +297,10 @@
         <div class="tab-content product-tabs-content">
           <div :class="{ 'active show': tabIndex === 0 }" class="tab-pane fade">
             <b-row class="tab-inner">
-              <b-col lg="6">
+              <b-col xl="10" offset-xl="1">
                 <table class="table table-striped table-borderless">
                   <tbody>
                     <tr v-for="(row, R) in tabs.specs" :key="`row-${R}`">
-                      <td>{{ row.title }}</td>
-                      <td>{{ row.val }}</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </b-col>
-              <b-col lg="6">
-                <table class="table table-striped table-borderless">
-                  <tbody>
-                    <tr v-for="(row, R) in tabs.specs" :key="`row-double-${R}`">
                       <td>{{ row.title }}</td>
                       <td>{{ row.val }}</td>
                     </tr>
@@ -405,8 +395,87 @@
           </div>
           <div :class="{ 'active show': tabIndex === 3 }" class="tab-pane fade">
             <b-row class="tab-inner">
-              <b-col>
-                Доставка и&nbsp;возврат
+              <b-col sm="4" xl="3" offset-xl="1" class="mb-3">
+                <div class="card card-white h-100">
+                  <div class="card-body d-flex flex-column p-3">
+                    <p class="font-size-4 font-weight-bold mb-4">
+                      По&nbsp;Москве<br />
+                      в&nbsp;пределах МКАД
+                    </p>
+                    <p
+                      class="font-size-6 font-weight-bold text-primary mt-auto"
+                    >
+                      350&nbsp;р.
+                    </p>
+                    <p
+                      class="text-gray-700 border-top border-gray-300 mb-2 pt-2"
+                    >
+                      При заказе на&nbsp;сумму от&nbsp;<span
+                        class="font-weight-medium"
+                        >2000</span
+                      >&nbsp;руб.
+                    </p>
+                    <p
+                      class="font-size-4 font-weight-bold text-primary mb-0 mb-sm-4"
+                    >
+                      Бесплатно
+                    </p>
+                  </div>
+                </div>
+              </b-col>
+              <b-col sm="4" xl="3" class="mb-3">
+                <div class="card card-white h-100">
+                  <div class="card-body d-flex flex-column p-3">
+                    <p class="font-size-4 font-weight-bold mb-4">
+                      За&nbsp;пределами МКАД и&nbsp;Московская область
+                    </p>
+                    <p
+                      class="font-size-6 font-weight-bold text-primary mt-auto"
+                    >
+                      850&nbsp;р.
+                    </p>
+                    <p
+                      class="text-gray-700 border-top border-gray-300 mb-2 pt-2"
+                    >
+                      При заказе на&nbsp;сумму от&nbsp;<span
+                        class="font-weight-medium"
+                        >4000</span
+                      >&nbsp;руб.
+                    </p>
+                    <p
+                      class="font-size-4 font-weight-bold text-primary mb-0 mb-sm-4"
+                    >
+                      Бесплатно
+                    </p>
+                  </div>
+                </div>
+              </b-col>
+              <b-col sm="4" xl="3" class="mb-3">
+                <div class="card card-white h-100">
+                  <div class="card-body d-flex flex-column p-3">
+                    <p class="font-size-4 font-weight-bold mb-4">
+                      Самовывоз
+                    </p>
+                    <p
+                      class="font-size-6 font-weight-bold text-primary mt-auto"
+                    >
+                      0&nbsp;р.
+                    </p>
+                    <p
+                      class="text-gray-700 border-top border-gray-300 mb-2 pt-2"
+                    >
+                      При заказе на&nbsp;сумму от&nbsp;<span
+                        class="font-weight-medium"
+                        >4000</span
+                      >&nbsp;руб.
+                    </p>
+                    <p
+                      class="font-size-4 font-weight-bold text-primary mb-0 mb-sm-4"
+                    >
+                      Бесплатно
+                    </p>
+                  </div>
+                </div>
               </b-col>
             </b-row>
           </div>
@@ -478,13 +547,12 @@
           <p class="font-weight-medium">
             Характеристика
           </p>
-          <ul class="list-unstyled list-specs">
-            <li v-for="(spec, S) in tabs.specs" :key="`sidebar-specs-${S}`">
-              <span class="title">{{ spec.title }}</span>
-              <span class="spacer spacer-dots"></span>
-              <span class="value">{{ spec.val }}</span>
-            </li>
-          </ul>
+          <dl class="list-specs">
+            <div v-for="(spec, S) in tabs.specs" :key="`sidebar-specs-${S}`">
+              <dt class="title">{{ spec.title }}</dt>
+              <dd class="value">{{ spec.val }}</dd>
+            </div>
+          </dl>
         </div>
         <div class="mb-4">
           <p class="font-weight-medium">
@@ -569,12 +637,30 @@ export default {
       tabIndex: 0,
       tabs: {
         specs: [
-          { title: 'Бренд', val: 'Pastificio' },
-          { title: 'Масса нетто', val: '100 г' },
-          { title: 'Энергетическая ценность', val: '34 кКл' },
-          { title: 'Страна-изготовитель', val: 'Индия' },
-          { title: 'Размер упаковки', val: '30 × 27 × 5.5' },
-          { title: 'Вес в упаковке', val: '108 г' }
+          { title: 'Cтрана производителя ', val: 'Франция' },
+          { title: 'В упаковке ', val: '115×90×200 мм (Д×Ш×В)' },
+          { title: 'Упаковка ', val: 'Картон' },
+          { title: 'Вес продукта ', val: '0.43 кг' },
+          {
+            title: 'Состав ',
+            val:
+              'Aqua, Ammonium Lauryl Sulfate, Cocamidopropyl Betaine, Glycerin, Prunus Persica Fruit Extract, Prunus Persica Nectarina Fruit Extract, Hydroxypropyl Guar Hydroxypropyltrimonium Chloride, Lauryl Alcohol, Polyquaternium-7, Ammonium Chloride, Ammonium Sulfate, Sodium Chloride, Citric Acid, Potassium Sorbate, Sodium Benzoate, Parfum, Benzyl Salicylate, Limonene, CI 14700, CI 19140'
+          },
+          {
+            title: 'Аромат ',
+            val: 'Апельсин, Грейпфрут, Цветок апельсинового дерева'
+          },
+          { title: 'Способ применения ', val: 'Array' },
+          {
+            title: 'Условия хранения ',
+            val: 'Хранить при температуре от 0 до +40С'
+          },
+          { title: 'Тип продукта ', val: 'Косметический подарочный набор' },
+          { title: 'Бренд ', val: 'Le Petit Marseillais' },
+          { title: 'Вес продукта с упаковкой ', val: '0.45 кг' },
+          { title: 'Для ежедневного применения ', val: 'Да' },
+          { title: 'Пол ', val: 'Для женщин' },
+          { title: 'Срок годности ', val: '1080 дней' }
         ],
         about: [
           'Основанный в\xA0Бордо в\xA01995\xA0году бренд Caudalie перерабатывает виноградные косточки, которые обычно нерационально выбрасываются во\xA0время сбора урожая, и\xA0получает ценнейшее масло, на\xA0основе которого затем создает свои эффективные инновационные косметические средства. Наша подборка включает питательные увлажняющие кремы, пенки для\xA0умывания, омолаживающие сыворотки, а\xA0также волшебный культовый эликсир красоты, изготовленный из\xA0100%\xA0натуральных ингредиентов.'

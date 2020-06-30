@@ -37,11 +37,36 @@
                     </b-form-radio>
                   </b-col>
                 </b-form-radio-group>
-                <b-form-group>
+                <b-form-group class="position-relative">
                   <b-form-input
+                    :value="selectedCity"
                     type="text"
                     placeholder="Введите город получения"
+                    @input="toggleDropdown"
                   ></b-form-input>
+                  <transition name="fade">
+                    <ul
+                      v-show="showDropdown"
+                      :class="{ show: showDropdown }"
+                      class="dropdown-menu w-100"
+                    >
+                      <li
+                        v-for="(city, index) in cities"
+                        :key="`city-${index}`"
+                      >
+                        <a
+                          href="#"
+                          class="dropdown-item py-2 px-3"
+                          @click="
+                            selectedCity = city
+                            showDropdown = false
+                          "
+                        >
+                          {{ city }}
+                        </a>
+                      </li>
+                    </ul>
+                  </transition>
                 </b-form-group>
               </b-col>
             </b-row>
@@ -773,7 +798,10 @@ export default {
       paymentMethod: 'online',
       paymentMethodLegal: 'transfer',
       companyInfo: null,
-      distanceDelivery: false
+      distanceDelivery: false,
+      showDropdown: false,
+      cities: ['Москва', 'Санкт-Петербург', 'Новосибирск', 'Челябинск'],
+      selectedCity: null
     }
   },
   mounted() {
@@ -786,6 +814,10 @@ export default {
     setDeliveryMethod(value) {
       if (this.entityType === 'legal') this.deliveryMethod = 'courier'
       else this.deliveryMethod = value
+    },
+    toggleDropdown(value) {
+      if (value && value.length > 0) this.showDropdown = true
+      else this.showDropdown = false
     }
   }
 }

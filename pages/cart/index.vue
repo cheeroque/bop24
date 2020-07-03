@@ -11,8 +11,8 @@
       <div class="container">
         <b-row>
           <b-col md="6" lg="7" xl="8">
-            <div class="d-flex align-items-end">
-              <p class="font-weight-bold mb-md-4">
+            <div class="d-flex align-items-center">
+              <p class="form-control-plaintext font-weight-bold w-auto mb-3">
                 В&nbsp;корзине 10&nbsp;товаров
               </p>
               <p class="font-size-1 ml-auto d-md-none">
